@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+.svg {
+ filter: invert(45%) sepia(20%) saturate(235%) hue-rotate(194deg) brightness(88%) contrast(83%);
+}
+.svgInfo {
+ filter: invert(40%) sepia(5%) saturate(6666%) hue-rotate(155deg) brightness(93%) contrast(90%);
+}
+.title {
+  @apply font-bold text-xl text-white;
+}
+.badge {
+  @apply py-1.5 px-2 bg-secondary inline rounded-md;
+}
+.commentInput {
+  @apply block w-full bg-secondary p-3 border-0 outline-0 rounded-md mb-3 placeholder:text-sm;
+}
+html{
+font-family: 'Ubuntu', sans-serif;
+}
