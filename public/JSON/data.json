@@ -1,12 +1,13 @@
-[
+{
+  "data": [
      {
-   	"id": 1,
-   	"name-en": "Sonic the Hedgehog 2",
-   	"name-fa": "سونیک خارپشت 2",
+   	"id": "xx92737492",
+   	"nameEn": "Sonic the Hedgehog 2",
+   	"nameFa": "سونیک خارپشت 2",
    	"imdb": "6.9",
    	"type": "movie",
-   	"episodeNum": "-",
-   	"episodeName": "-",
+   	"episodeNum": "",
+   	"episodeName": "",
    	"year": "2022",
    	"ganre": ["Action", "Animation", "Family"],
    	"quality": "Full HD",
@@ -1999,3 +2000,4 @@
    	  ]
    }
 ]
+}

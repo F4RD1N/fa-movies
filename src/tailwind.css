@@ -10,14 +10,54 @@
  filter: invert(40%) sepia(5%) saturate(6666%) hue-rotate(155deg) brightness(93%) contrast(90%);
 }
 .title {
-  @apply font-bold text-xl text-white;
+  @apply text-lg font-medium text-white;
 }
 .badge {
-  @apply py-1.5 px-2 bg-secondary inline rounded-md;
+  @apply py-1.5 bg-transparent inline border-0;
 }
 .commentInput {
   @apply block w-full bg-secondary p-3 border-0 outline-0 rounded-md mb-3 placeholder:text-sm;
 }
+.sliderGradient {
+  height: 50%;
+  background: linear-gradient(to top, #0C0D16, rgba(12,13,22, .65), transparent 100%);
+  pointer-events: none;
+}
+.cardGradient {
+  height: 50%;
+  background: linear-gradient(to top, rgba(12,13,22, .7), rgba(12,13,22, .5), transparent 100%);
+  pointer-events: none;
+}
+
+
+.skeleton {
+  @apply bg-secondary;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skeleton::after {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg, transparent, rgb(51,51,51), transparent);
+  -webkit-animation: shimmer 1.5s infinite;
+          animation: shimmer 1.5s infinite;
+  content: "";
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+
+
 html{
 font-family: 'Ubuntu', sans-serif;
 }

@@ -6,9 +6,9 @@ content: [
   theme: {
     extend: {
       colors: {
-        natural: "#131524",
-        primary: "#237195",
-        secondary: "#2B2D39",
+        natural: "#0C0D16",
+        primary: "#1E5C79",
+        secondary: "#262626",
         textSecondary: "#8F9097"
       },
       minHeight: {
@@ -16,6 +16,7 @@ content: [
       },
       height: {
         128: "30rem",
+        136: "33rem",
       },
     },
   },

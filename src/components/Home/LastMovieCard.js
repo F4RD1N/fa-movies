@@ -10,7 +10,7 @@ import yearIcon from '../../icons/year.svg'
 const LastMovieCard = () => {
   const cover = "https://i.pinimg.com/736x/c7/6e/fd/c76efd9493bda833138d5fc5554ad8e6.jpg"
   const movieData = {
-    id: 'ksd929wow9fooKw92',
+    id: 'xx92737492',
     nameEn: "Spiderman: HomeComing",
     nameFa: "مرد عنکبوتی:بازگشت به خانه",
     image: {cover},

@@ -1,27 +1,23 @@
 import CommentsTitlebar from './CommentsTitlebar'
 import CommentCard from './CommentCard'
 import NewComment from './NewComment'
-const Comments = () => {
+const Comments = ({data}) => {
   return (
     <section className="mt-11">
      <CommentsTitlebar />
-     <CommentCard 
-      auther="FARDIN"
-      time="2022/04/05"
-      body="perfect :)"/>
-     <CommentCard 
-      auther="FARDIN"
-      time="2022/04/05"
-      body="Lorem ipsum dolor sit amet."/>
-     <CommentCard 
-      auther="FARDIN"
-      time="2022/04/05"
-      body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam purus sapien, feugiat eu bibendum vitae, suscipit at tortor"/>
-     <CommentCard 
-      auther="FARDIN"
-      time="2022/04/05"
-      body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam purus sapien, feugiat eu bibendum vitae, suscipit at tortor that i like it so fucking much. ty for your good website♡"/>
-      <NewComment />
+     {
+       data && data.map(item => {
+         const {id, auther, time, comment} = item
+         return(
+          <CommentCard
+           key={id}
+           auther={auther}
+           time={time}
+           body={comment}/>
+         )
+       })
+     }
+     <NewComment />
     </section>
     )
 }
