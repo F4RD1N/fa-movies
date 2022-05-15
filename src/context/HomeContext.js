@@ -29,13 +29,14 @@ const HomeContext = ({ children }) => {
     dispatch({ type:'SET_LOADING' })
     
     homeListType.map(typeItem => {
-      const { id, title, path, page, mode, genre, query, originalLanguage} = typeItem
+      const { id, title, path, page, mode, genre, query, originalLanguage, type} = typeItem
       homeListService(path, page, genre, query, originalLanguage)
         .then(response => {
           const preset = {
             id, 
             title, 
             mode,
+            type,
             data: response.data.results
           }
           dispatch({
@@ -53,6 +54,7 @@ const HomeContext = ({ children }) => {
   }, [])
   return(
     <HomeListContext.Provider value={ state }>
+    
     {state.isError && console.log(state.errorMessage)}
      {state.data.length != homeListType.length && <p>Loading . . .</p> }
      { children }

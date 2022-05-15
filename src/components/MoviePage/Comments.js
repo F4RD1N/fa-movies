@@ -1,22 +1,24 @@
+import { sliceFullYear } from '../../utils/functions'
 import CommentsTitlebar from './CommentsTitlebar'
 import CommentCard from './CommentCard'
 import NewComment from './NewComment'
 const Comments = ({data}) => {
+
   return (
     <section className="mt-11">
-     <CommentsTitlebar />
-     {
-       data && data.map(item => {
-         const {id, auther, time, comment} = item
-         return(
-          <CommentCard
-           key={id}
-           auther={auther}
-           time={time}
-           body={comment}/>
-         )
-       })
-     }
+     <CommentsTitlebar count={data && data.length && data.length}/>
+      {
+        data && data.length ? data.map(item => {
+          const { author, content, created_at, id } = item
+
+       return <CommentCard
+               key={id}
+               auther={author}
+               time={sliceFullYear(created_at)}
+               body={content}/>
+        })
+        : <center>there is no Comments :(</center>
+      }
      <NewComment />
     </section>
     )

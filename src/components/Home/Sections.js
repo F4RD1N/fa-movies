@@ -3,7 +3,8 @@ import SectionCard from './SectionCard'
 import Titlebar from './Titlebar'
 import Slider from "react-slick";
 
-const Sections = ({title, data}) => {
+const Sections = ({title, data, type}) => {
+  
 const settings = {
       dots: false,
       infinite: true,
@@ -20,14 +21,13 @@ const settings = {
       {
         data && data.length && data.map(item => {
        const { id, poster_path, title, name} = item
-       return(
-         <SectionCard
+      return poster_path && <SectionCard
            key={id}
            poster={MAIN_IMAGE(poster_path)}
            title={title ? title : name}
            movieId={id}
+           type={type}
            />
-       )
         })
       }
     </Slider>

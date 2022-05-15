@@ -7,7 +7,7 @@ content: [
     extend: {
       colors: {
         natural: "#0C0D16",
-        primary: "#1E5C79",
+        primary: "#262942",
         secondary: "#262626",
         textSecondary: "#8F9097"
       },
@@ -16,7 +16,7 @@ content: [
       },
       height: {
         128: "30rem",
-        136: "33rem",
+        136: "36rem",
       },
     },
   },

@@ -3,6 +3,7 @@ import { ScrollToTop } from 'react-router-scroll-to-top';
 import './App.css';
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import MovieInfoContext from './context/MovieInfoContext'
 import HomePage from './pages/Home'
 import MoviePage from './pages/MoviePage'
 import AddMovie from './components/AddMovie/AddMovie'
@@ -12,7 +13,20 @@ function App() {
      <ScrollToTop />
      <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="movie/:id" element={<MoviePage />} />
+      <Route 
+        path="movie/:id" 
+        element={
+            <MovieInfoContext>
+              <MoviePage /> 
+            </MovieInfoContext>}
+      />
+      <Route 
+        path="tv/:id" 
+        element={
+            <MovieInfoContext>
+              <MoviePage /> 
+            </MovieInfoContext>}
+      />
       <Route path="add/" element={<AddMovie />} />
       
       <Route path="*" element={<Navigate to="/" />} />

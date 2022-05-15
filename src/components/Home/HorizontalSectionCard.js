@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
-const HorizontalSectionCard = ({name, cover}) => {
+const HorizontalSectionCard = ({name, cover, movieId, type}) => {
   const [isLoaded, setIsLoaded] = useState(false)
   return (
+    <Link to={`/${type && type == 'movie' ? 'movie' : 'tv'}/${movieId}`}>
     <div className="relative h-36 mr-2 overflow-hidden rounded">
         {
           !isLoaded && <div className="absolute skeleton"></div>
@@ -19,6 +21,7 @@ const HorizontalSectionCard = ({name, cover}) => {
      </div>
       }
     </div>
+    </Link>
     )
 }
 

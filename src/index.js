@@ -7,11 +7,11 @@ import './index.css';
 import App from './App';
 import HomeContext from './context/HomeContext'
 ReactDOM.render(
-  <HomeContext>
      <BrowserRouter>
+  <HomeContext>
         <App />
-     </BrowserRouter>
   </HomeContext>
+     </BrowserRouter>
   ,
   document.getElementById('root')
 );
