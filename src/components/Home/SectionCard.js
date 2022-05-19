@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 const SectionCard = ({title, poster, movieId, type}) => {
   const [isLoaded, setIsLoaded] = useState(false)
-  console.log(type)
+  
   return(
    <div>
     <div className="relative h-44 mr-2 overflow-hidden rounded">

@@ -21,7 +21,7 @@
 }
 .sliderGradient {
   height: 50%;
-  background: linear-gradient(to top, #0C0D16, rgba(12,13,22, .6), transparent 100%);
+  background: linear-gradient(to top, #0C0D16, rgba(12,13,22, .7), transparent 100%);
   pointer-events: none;
 }
 .searchbarGradient {
@@ -66,4 +66,8 @@
 
 html{
 font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  @apply bg-natural;
 }

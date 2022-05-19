@@ -1,6 +1,7 @@
 import React, { useState, useReducer, useEffect } from 'react'
 import { homeListService } from '../services/homeListService'
 import { HOME_LIST_TYPE as homeListType} from '../config/Config'
+import { setOrderArrayById } from '../utils/functions'
 
 export const HomeListContext = React.createContext(null)
 
@@ -15,7 +16,7 @@ const reducer = (state, action) => {
     case 'SET_LOADING': 
       return {...state, isLoading: true};
     case 'SET_DATA':
-      return {...state, isLoading: false, data: [...state.data, action.data]};
+      return {...state, isLoading: false, data: setOrderArrayById([...state.data, action.data])};
     case 'SET_ERROR':
       return { ...state, isLoading:false, isError: true, errorMessage: action.error}
     default:
@@ -54,9 +55,6 @@ const HomeContext = ({ children }) => {
   }, [])
   return(
     <HomeListContext.Provider value={ state }>
-    
-    {state.isError && console.log(state.errorMessage)}
-     {state.data.length != homeListType.length && <p>Loading . . .</p> }
      { children }
     </HomeListContext.Provider>
     )

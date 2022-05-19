@@ -3,10 +3,12 @@ import { useLocation } from 'react-router-dom'
 import { getCurrentPath } from '../utils/functions'
 import {MovieDataContext} from '../context/MovieInfoContext'
 import { ScrollToTop } from 'react-router-scroll-to-top';
+import Header from '../components/MoviePage/Header'
 import Hero from '../components/MoviePage/Hero'
 import MoreInfo from '../components/MoviePage/MoreInfo'
 import Sections from '../components/Home/Sections'
 import Comments from '../components/MoviePage/Comments'
+
 
 const MoviePage = () => {
   const location = useLocation()
@@ -48,6 +50,7 @@ const MoviePage = () => {
     <>
     <ScrollToTop />
      <section className="pb-6">
+       <Header data={movieData.mainDetails}/>
        <Hero data={movieData.mainDetails}/>
        <div className="px-6">
          <MoreInfo  data={movieData.credits}/>

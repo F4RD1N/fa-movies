@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { HomeListContext } from '../context/HomeContext'
 import Slider from '../components/Home/Slider'
-import Searchbar from '../components/Home/Searchbar'
 import Catagories from '../components/Home/Catagories'
 import HorizontalSections from '../components/Home/HorizontalSections'
 import LastMovies from '../components/Home/LastMovies'
@@ -12,7 +11,6 @@ const Home = () => {
   const {isLoading, data: listData, isError, errorMessage} = useContext(HomeListContext)
   return (
     <>
-     <Searchbar />
     <Slider />
    <div className="py-6">
     {/*<div className="px-6">

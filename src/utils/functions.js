@@ -38,3 +38,7 @@ export const splitCharacterName = name => {
 export const getCurrentPath = path => {
   return path.split("/")[1]+'/'
 }
+
+export const setOrderArrayById = arr => {
+  return arr.sort((a, b) => a.id - b.id)
+}

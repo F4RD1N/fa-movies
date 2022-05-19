@@ -59,7 +59,7 @@ const MovieInfoContext = ({ children }) => {
   }, [params])
   return(
     <MovieDataContext.Provider value={ state }>
-     { state.data && state.data.length == movieDetails.length && children }
+     { state.data ? state.data.length == movieDetails.length && children : '' }
     </MovieDataContext.Provider>
     )
 }

@@ -46,7 +46,7 @@ const HOME_LIST_TYPE = [
     path: 'movie/popular?',
     mode: 'horizontal',
     type: 'movie',
-    page: 15
+    page: 1
     },
   {
     id: 2,
@@ -54,7 +54,7 @@ const HOME_LIST_TYPE = [
     path: 'movie/popular?',
     mode: 'vertical',
     type: 'movie',
-    page: 10
+    page: 1
     },
   {
     id: 3,
@@ -62,7 +62,7 @@ const HOME_LIST_TYPE = [
     path: 'movie/upcoming?',
     mode: 'vertical',
     type: 'movie',
-    page: 7
+    page: 1
     },
     {
     id: 4,
@@ -71,7 +71,7 @@ const HOME_LIST_TYPE = [
     mode: 'vertical',
     genre: 16,
     type: 'movie',
-    page: 2
+    page: 1
     },
     {
     id: 5,
@@ -80,7 +80,7 @@ const HOME_LIST_TYPE = [
     mode: 'vertical',
     genre: GENRES_ID.action,
     type: 'movie',
-    page: 19
+    page: 1
     },
     {
     id: 6,
@@ -89,7 +89,7 @@ const HOME_LIST_TYPE = [
     mode: 'vertical',
     genre: GENRES_ID.romance,
     type: 'movie',
-    page: 6
+    page: 1
     },
     {
     id: 7,
@@ -98,7 +98,7 @@ const HOME_LIST_TYPE = [
     mode: 'vertical',
     genre: GENRES_ID.fantasy,
     type: 'movie',
-    page: 5
+    page: 1
     },
     {
     id: 8,
@@ -107,7 +107,7 @@ const HOME_LIST_TYPE = [
     mode: 'horizontal',
     genre: GENRES_ID.war,
     type: 'movie',
-    page: 4
+    page: 25
     },
     {
     id: 9,
@@ -116,7 +116,7 @@ const HOME_LIST_TYPE = [
     mode: 'vertical',
     genre: GENRES_ID.history,
     type: 'movie',
-    page: 3
+    page: 1
     },
     {
     id: 10,
@@ -125,7 +125,7 @@ const HOME_LIST_TYPE = [
     mode: 'horizontal',
     genre: GENRES_ID.horror,
     type: 'movie',
-    page: 2
+    page: 1
     },
     {
     id: 11,

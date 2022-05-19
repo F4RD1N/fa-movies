@@ -7,7 +7,7 @@ content: [
     extend: {
       colors: {
         natural: "#0C0D16",
-        primary: "#262942",
+        primary: "rgb(62,55,117)",
         secondary: "#262626",
         textSecondary: "#8F9097"
       },
@@ -17,10 +17,12 @@ content: [
       height: {
         128: "30rem",
         136: "36rem",
+        140: "40rem",
+        'header': '92vh'
       },
     },
   },
   plugins: [
-      require('daisyui'),
+      
     ],
 }
