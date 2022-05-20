@@ -456,6 +456,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 .inset-x-0 {
   left: 0px;
   right: 0px;
@@ -495,16 +502,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
 
-.ml-auto {
-  margin-left: auto;
-}
-
 .mb-5 {
   margin-bottom: 1.25rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .mt-10 {
@@ -567,12 +579,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 2rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mr-5 {
   margin-right: 1.25rem;
 }
 
 .mt-9 {
   margin-top: 2.25rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .block {
@@ -585,6 +605,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .aspect-video {
@@ -635,6 +659,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 50%;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
 .max-h-48 {
   max-height: 12rem;
 }
@@ -675,6 +707,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 91.666667%;
 }
 
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
 .-translate-y-8 {
   --tw-translate-y: -2rem;
   -webkit-transform: var(--tw-transform);
@@ -689,6 +731,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .resize-none {
   resize: none;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -711,10 +757,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: space-between;
 }
 
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-hidden {
@@ -821,6 +879,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.75rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -878,6 +940,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: center;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -896,11 +963,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -930,14 +992,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(143 144 151 / var(--tw-text-opacity));
 }
 
-.text-natural {
-  --tw-text-opacity: 1;
-  color: rgb(12 13 22 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-natural {
+  --tw-text-opacity: 1;
+  color: rgb(12 13 22 / var(--tw-text-opacity));
 }
 
 .text-emerald-600 {
@@ -958,6 +1020,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(62 55 117 / var(--tw-text-opacity));
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .opacity-90 {
@@ -1146,6 +1212,16 @@ body {
   --tw-saturate: saturate(1.5);
   -webkit-filter: var(--tw-filter);
           filter: var(--tw-filter);
+}
+
+.active\:bg-red-500:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.active\:bg-primary:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(62 55 117 / var(--tw-bg-opacity));
 }
 
 .active\:saturate-150:active {

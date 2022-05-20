@@ -19,7 +19,7 @@ const Searchbar = () => {
       <NavLink 
          ref={buttonRef}
          onClick={clickHandler}
-         to="/search"
+         to="/search?query="
          className={({isActive}) => isActive ? 'ri-arrow-left-line' : 'ri-search-line'}>
       </NavLink>
      </ul>

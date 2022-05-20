@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom' 
-import { getCurrentPath } from '../utils/functions'
+import { getCurrentPath, sliceTitle } from '../utils/functions'
 import {MovieDataContext} from '../context/MovieInfoContext'
 import { ScrollToTop } from 'react-router-scroll-to-top';
 import Header from '../components/MoviePage/Header'
@@ -19,8 +19,13 @@ const MoviePage = () => {
     mainDetails: {},
     credits: [],
     reviews: [],
-    similar: []
+    similar: [],
+    videos: [],
+    recommendations: []
   })
+  
+  const { mainDetails } = movieData
+  const movieTitle = mainDetails.title ? mainDetails.title : mainDetails.original_title ? mainDetails.original_title : mainDetails.name
   
   useEffect(() => {
      data.map(item => {
@@ -41,6 +46,14 @@ const MoviePage = () => {
              return setMovieData(prevState => {
                return {...prevState, similar: item.data.results}
              })
+           case 'videos':
+             return setMovieData(prevState => {
+               return {...prevState, videos: item.data.results}
+             })
+           case 'recommendations':
+             return setMovieData(prevState => {
+               return {...prevState, recommendations: item.data.results}
+             })
            default:
              return item
          }
@@ -51,10 +64,11 @@ const MoviePage = () => {
     <ScrollToTop />
      <section className="pb-6">
        <Header data={movieData.mainDetails}/>
-       <Hero data={movieData.mainDetails}/>
+       <Hero data={movieData.mainDetails} trailer={movieData.videos[0]}/>
        <div className="px-6">
          <MoreInfo  data={movieData.credits}/>
-         <Sections title="Similar Movies" data={movieData.similar} type={currentPath && currentPath}/>
+         <Sections title={`Similar with "${movieTitle && sliceTitle(movieTitle)}"`} data={movieData.similar} type={currentPath && currentPath}/>
+         {movieData.recommendations.length > 2 && <Sections title="Recommended" data={movieData.recommendations} type={currentPath && currentPath}/>}
        <Comments data={movieData.reviews}/>
        </div>
      </section>

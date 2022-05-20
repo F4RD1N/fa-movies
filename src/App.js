@@ -4,6 +4,8 @@ import './App.css';
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import MovieInfoContext from './context/MovieInfoContext'
+import SearchContext from './context/SearchContext'
+import DiscoverContext from './context/DiscoverContext'
 import HomePage from './pages/Home'
 import MoviePage from './pages/MoviePage'
 import Searchbar from './components/Home/Searchbar'
@@ -18,7 +20,15 @@ function App() {
      <Searchbar />
      <Routes location={location} key={location.pathname}>
       <Route path="/" element={<HomePage />} />
-      <Route path="/search" element={<Search />} />
+      <Route 
+        path="/search" 
+        element={
+            <SearchContext>
+             <DiscoverContext>
+              <Search /> 
+             </DiscoverContext>
+            </SearchContext>}
+      />
       <Route 
         path="movie/:id" 
         element={

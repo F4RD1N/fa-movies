@@ -12,7 +12,9 @@ export const getFullLanguageName = lang => {
     case 'it': return 'Italiano'
     case 'no': return 'Norwegian'
     case 'bn': return 'Bengali'
+    case 'ru': return 'Russian'
     case 'fi': return 'Finnish'
+    case 'ko': return 'Korean'
     default : return 'didnt set'
   }
 }
@@ -41,4 +43,20 @@ export const getCurrentPath = path => {
 
 export const setOrderArrayById = arr => {
   return arr.sort((a, b) => a.id - b.id)
+}
+
+export const queryString = query => {
+	return(JSON.parse(`{"${query.slice(1).replaceAll('&', ', ').replaceAll('=', '": ').replaceAll(', ', '", "').replaceAll(': ', ': "')}"}`).query.replaceAll('%20', ' '))
+}
+
+export const yearsList = () => {
+  const yearList = []
+  for(let i = 2022; i >= 1950; i--) {
+    yearList.push(i)
+  }
+  return yearList
+}
+
+export const sliceTitle = title => {
+  return title.split("").length > 25 ? title.slice(0,25)+'...' : title
 }

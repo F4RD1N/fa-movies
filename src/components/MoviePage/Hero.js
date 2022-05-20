@@ -1,6 +1,6 @@
-import { MAIN_BACKDROP } from '../../config/Config'
+import { MAIN_BACKDROP, TRAILER_LINK } from '../../config/Config'
 
-const Hero = ({data}) => {
+const Hero = ({data, trailer}) => {
  const {
    backdrop_path,
    poster_path,
@@ -16,22 +16,14 @@ const Hero = ({data}) => {
    runtime,
    tagline
  } = data
- 
  return(
    <section>
     <div className="px-6">
      <div className="flex justify-center items-center py-3 mb-5 rounded bg-primary text-white font-bold active:saturate-150"><i className="ri-download-line"></i><span className="mx-2">Download</span></div>
-     <p className="mb-1"><span className="text-primary">Director:</span> Fardin Tasou</p>
-     <p>{overview}</p>
-    <div className="mt-8 rounded overflow-hidden">
-    
-     <video controls
-      controlsList="nodownload noplaybackrate"
-      className="w-full aspect-video"
-      onContextMenu={event => event.preventDefault()}
-      src=""
-      poster=""
-     />
+
+     <p><span className="text-primary">Story:</span> {overview}</p>
+    <div className="mt-8 rounded">
+{trailer && trailer.key && <iframe className="mb-10 w-full aspect-video bg-secondary rounded" src={TRAILER_LINK+trailer.key} title="Trailer" frameBorder="0" allow="encrypted-media; gyroscope;" allowFullScreen></iframe>}
     </div>
     </div>
    </section>

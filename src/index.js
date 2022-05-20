@@ -8,9 +8,9 @@ import App from './App';
 import HomeContext from './context/HomeContext'
 ReactDOM.render(
      <BrowserRouter>
-  <HomeContext>
+   <HomeContext>
         <App />
-  </HomeContext>
+   </HomeContext>
      </BrowserRouter>
   ,
   document.getElementById('root')
