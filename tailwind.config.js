@@ -7,7 +7,7 @@ content: [
     extend: {
       colors: {
         natural: "#0C0D16",
-        primary: "rgb(62,55,117)",
+        primary: "rgb(51,51,51)",
         secondary: "#262626",
         textSecondary: "#8F9097"
       },
@@ -19,7 +19,7 @@ content: [
         136: "36rem",
         140: "40rem",
         'header': '92vh',
-        'half': '70vh',
+        'half': '67vh',
       },
       screens: {
       'lg': '834px',

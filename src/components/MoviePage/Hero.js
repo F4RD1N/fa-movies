@@ -18,10 +18,12 @@ const Hero = ({data, trailer}) => {
  } = data
  return(
    <section>
-    <div className="px-6 mt-8">
-     <p><span className="text-primary">Story:</span> {overview}</p>
+    <div className="px-6 mt-6">
+     <div className="flex justify-center items-center py-3 mb-5 rounded bg-primary text-white font-bold active:bg-secondary"><i className="ri-download-line"></i><span className="mx-2">Download</span></div>
+
+     <p><span className="text-textSecondary font-bold">Story:</span> {overview}</p>
     <div className="mt-8 rounded">
-{trailer && trailer.key && <iframe className="mb-10 w-full aspect-video bg-secondary rounded" src={TRAILER_LINK+trailer.key} title="Trailer" frameBorder="0" allow="encrypted-media; gyroscope;" allowFullScreen></iframe>}
+     {trailer && trailer.key && <iframe className="mb-10 w-full aspect-video bg-secondary rounded" src={TRAILER_LINK+trailer.key} title="Trailer" frameBorder="0" allow="encrypted-media; gyroscope;" allowFullScreen></iframe>}
     </div>
     </div>
    </section>
