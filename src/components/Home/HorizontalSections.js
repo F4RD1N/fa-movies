@@ -13,6 +13,62 @@ const HorizontalSections = ({data, title, type}) => {
       slidesToShow:1.4,
       slidesToScroll: 1,
       arrows: false,
+   responsive: [
+        {
+          breakpoint: 1536,
+          settings: {
+            slidesToShow: 4.5,
+            slidesToScroll: 3,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: 3.5,
+            slidesToScroll: 3,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2.7,
+            slidesToScroll: 2,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2.2,
+            slidesToScroll: 2,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 640,
+          settings: {
+            slidesToShow: 1.3,
+            slidesToScroll: 1,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          }
+        },
+      ]
     };
   return(
     <section className="mb-14">

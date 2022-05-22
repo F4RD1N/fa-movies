@@ -20,6 +20,10 @@ content: [
         140: "40rem",
         'header': '92vh'
       },
+      screens: {
+      'lg': '834px',
+      'xs': {'max': '320px'}
+    }
     },
   },
   plugins: [

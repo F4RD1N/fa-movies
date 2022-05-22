@@ -7,12 +7,68 @@ const Sections = ({title, data, type}) => {
   
 const settings = {
       dots: false,
-      infinite: true,
+      infinite: false,
       speed: 500,
       lazyLoad: true,
-      slidesToShow: 3,
+      slidesToShow: 3.1,
       slidesToScroll: 3,
-      arrows: false
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1536,
+          settings: {
+            slidesToShow: 9,
+            slidesToScroll: 9,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 1280,
+          settings: {
+            slidesToShow: 7,
+            slidesToScroll: 7,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 5.1,
+            slidesToScroll: 5,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4.1,
+            slidesToScroll: 4,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 640,
+          settings: {
+            slidesToShow: 3.1,
+            slidesToScroll: 3,
+            infinite: false,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 2.1,
+            slidesToScroll: 2,
+            infinite: false,
+            dots: false
+          }
+        },
+      ]
     };
   return(
     <section className="mb-8">

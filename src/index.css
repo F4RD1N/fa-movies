@@ -611,16 +611,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
+.aspect-\[16\/9\] {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-\[9\/16\] {
+  aspect-ratio: 9 / 16;
+}
+
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
 
 .h-40 {
   height: 10rem;
-}
-
-.h-36 {
-  height: 9rem;
 }
 
 .h-full {
@@ -637,10 +641,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-16 {
   height: 4rem;
-}
-
-.h-44 {
-  height: 11rem;
 }
 
 .h-header {
@@ -1219,13 +1219,38 @@ body {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
-.active\:bg-primary:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(62 55 117 / var(--tw-bg-opacity));
-}
-
 .active\:saturate-150:active {
   --tw-saturate: saturate(1.5);
   -webkit-filter: var(--tw-filter);
           filter: var(--tw-filter);
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 834px) {
+  .lg\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:grid-cols-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:grid-cols-9 {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 320px) {
+  .xs\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

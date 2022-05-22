@@ -6,7 +6,7 @@ const SectionCard = ({title, poster, movieId, type}) => {
   
   return(
    <div>
-    <div className="relative h-44 mr-2 overflow-hidden rounded">
+    <div className="relative aspect-[9/16] mr-2 overflow-hidden rounded">
         {
           !isLoaded && <div className="absolute skeleton"></div>
         }

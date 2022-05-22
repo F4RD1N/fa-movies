@@ -6,7 +6,7 @@ const HorizontalSectionCard = ({name, cover, movieId, type}) => {
   const [isLoaded, setIsLoaded] = useState(false)
   return (
     <Link to={`/${type && type == 'movie' ? 'movie' : 'tv'}/${movieId}`}>
-    <div className="relative h-36 mr-2 overflow-hidden rounded">
+    <div className="relative aspect-[16/9] mr-2 overflow-hidden rounded">
         {
           !isLoaded && <div className="absolute skeleton"></div>
         }
