@@ -18,7 +18,8 @@ content: [
         128: "30rem",
         136: "36rem",
         140: "40rem",
-        'header': '92vh'
+        'header': '92vh',
+        'half': '70vh',
       },
       screens: {
       'lg': '834px',
