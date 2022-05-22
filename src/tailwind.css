@@ -14,15 +14,15 @@
   @apply text-lg font-medium text-white;
 }
 .badge {
-  @apply py-1.5 px-2  text-sm inline border-0 rounded;
-  background-color: #2B2D39;
+  @apply py-1.5 bg-transparent border-0;
+  
 }
 .commentInput {
   @apply block w-full bg-secondary p-3 border-0 outline-0 rounded-md mb-3 placeholder:text-sm;
 }
 .sliderGradient {
   height: 50%;
-  background: linear-gradient(to top, #0C0D16, rgba(12,13,22, .8), transparent 100%);
+  background: linear-gradient(to top, #0C0D16, rgba(12,13,22, .7), transparent 100%);
   pointer-events: none;
 }
 .searchbarGradient {
@@ -71,4 +71,8 @@ font-family: 'Ubuntu', sans-serif;
 
 body {
   @apply bg-natural;
+}
+
+.rtl {
+  direction: rtl;
 }
