@@ -4,7 +4,7 @@ const SliderItem = ({image, name, year, country, imdb, ageLimit, genre}) => {
     <div className="h-header">
      <div className="absolute z-20 bottom-0 w-full h-32 px-4 flex flex-col items-center">
      <h2 className="text-white text-xl font-semibold">{name}</h2>
-      <ul className="mt-4 space-x-4 text-white">
+      <ul className="mt-4 space-x-4 text-white flex items-center">
         <li className="badge text-xs">{country}</li>
         <li className="badge text-xs">{year}</li>
         <li className="badge text-3xl text-yellow-500">{imdb}</li>
