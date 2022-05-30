@@ -1,6 +1,6 @@
 //configuration for API
 const API_URL = "https://api.themoviedb.org/3/"
-const API_KEY = "9f1ffd64abd4bde18614fd9087d87d71"
+const API_KEY = "c29faff91cbc5bdce07ac15f339379dd"
 const IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
 const TRAILER_LINK = "https://www.youtube.com/embed/"
 

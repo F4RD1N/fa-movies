@@ -15,6 +15,7 @@ export const getFullLanguageName = lang => {
     case 'ru': return 'Russian'
     case 'fi': return 'Finnish'
     case 'ko': return 'Korean'
+    case 'hi': return 'Indian'
     default : return 'didnt set'
   }
 }

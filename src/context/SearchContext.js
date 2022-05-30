@@ -16,9 +16,11 @@ const reducer = (state, action) => {
     case 'SET_LOADING':
       return {...state, isloading: true}
     case 'SET_DATA': 
-      return {...state, isloading: false, data: action.data}
+      return {...state, isloading: false, data: action.data, isError: false, errorMessage: null}
     case 'SET_ERROR':
       return {...state, isloading: false, isError: true, errorMessage: action.error}
+    case 'SET_RESET':
+      return {isloading: false, data: [], isError: false, errorMessage: null}
     default:
       return state
   }
@@ -48,17 +50,28 @@ const SearchContext = ({children}) => {
     if(query){
     searchService(path)
       .then(res => {
-        dispatch({type: 'SET_DATA', data: res.data.results})
-        setTotalPages(res.data.total_pages)
+        const results = res.data.results
+      
+        
+      if(!results.length || (results.length == 1 && results[0].backdrop_path == null)) {
+        dispatch({type: 'SET_ERROR', error: 'Nothing Found!'})
+      }else {
+        dispatch({type: 'SET_DATA', data: results})
+        setTotalPages(res.data.total_pages);
+      }
+      
       })
-    }
+      .catch(err => {
+        dispatch({type: 'SET_ERROR', error: err.message})
+      })
+    }else dispatch({type: 'SET_RESET'})
   }, 500);
   return () => {
     clearTimeout(timeout);
   };
 }, [location.search, currentYear, currentPage]);
 return(
-  <SearchDataContext.Provider value={[query, setQuery, state.data, currentYear, setCurrentYear,currentPage, setCurrentPage, totalPages]}>
+  <SearchDataContext.Provider value={[query, setQuery, state, currentYear, setCurrentYear,currentPage, setCurrentPage, totalPages]}>
    {children}
   </SearchDataContext.Provider>
   )

@@ -15,7 +15,9 @@
 }
 .badge {
   @apply py-1.5 bg-transparent border-0;
-  
+}
+.badge2 {
+  @apply py-1 px-2 text-sm rounded bg-primary border-0;
 }
 .commentInput {
   @apply block w-full bg-secondary p-3 border-0 outline-0 rounded-md mb-3 placeholder:text-sm;

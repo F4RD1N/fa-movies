@@ -3,12 +3,14 @@ import { v4 } from 'uuid'
 import SearchList from '../components/Search/SearchList'
 import Discover from '../components/Search/Discover'
 import PageHandler from '../components/Search/PageHandler'
+import Loader from '../components/Loader'
+import Status from '../components/Search/Status'
 import { SearchDataContext } from '../context/SearchContext'
 import { yearsList } from '../utils/functions'
 
 
 const Search = () => {
-  const [query, setQuery, data, currentYear, setCurrentYear, currentPage, setCurrentPage, totalPages] = useContext(SearchDataContext)
+  const [query, setQuery, state, currentYear, setCurrentYear, currentPage, setCurrentPage, totalPages] = useContext(SearchDataContext)
   const inputRef = useRef(null)
   const selectRef = useRef(null)
   const [isFilterClicked, setIsFilterClicked] = useState(false)
@@ -59,8 +61,13 @@ const Search = () => {
       </select>
       </span>
      </div>
-     <SearchList data={data}/>
-     <PageHandler data={data} page={currentPage} setPage={setCurrentPage} totalPages={totalPages}/>
+     {
+      query ? !state.isloading ? !state.isError && state.data.length ? <><SearchList data={state.data}/>
+     <PageHandler data={state.data} page={currentPage} setPage={setCurrentPage} totalPages={totalPages}/></>
+      : <Status text={state.errorMessage} /> 
+      : <Status text={<Loader />}/> 
+      : <Status text="Search Something. . ." />
+     }
      </>
     : <Discover />
     }

@@ -422,14 +422,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 *, ::before, ::after {
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   --tw-ring-offset-shadow: 0 0 #0000;
@@ -507,6 +499,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.25rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -525,10 +521,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-2 {
   margin-bottom: 0.5rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
 }
 
 .mt-6 {
@@ -623,6 +615,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   aspect-ratio: 16 / 9;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-40 {
   height: 10rem;
 }
@@ -671,12 +667,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 3.5rem;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .max-h-48 {
   max-height: 12rem;
 }
 
 .min-h-24 {
   min-height: 96px;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-10\/12 {
@@ -721,10 +725,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 50%;
 }
 
-.-translate-y-4 {
-  --tw-translate-y: -1rem;
-  -webkit-transform: var(--tw-transform);
-          transform: var(--tw-transform);
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
 }
 
 .select-none {
@@ -863,6 +880,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
 
+.fill-primary {
+  fill: rgb(51,51,51);
+}
+
 .object-cover {
   object-fit: cover;
 }
@@ -940,10 +961,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 1.5rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -994,6 +1011,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-textSecondary {
   --tw-text-opacity: 1;
   color: rgb(143 144 151 / var(--tw-text-opacity));
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1074,6 +1096,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: transparent;
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
+}
+
+.badge2 {
+  border-radius: 0.25rem;
+  border-width: 0px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 51 51 / var(--tw-bg-opacity));
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .commentInput {
@@ -1216,26 +1251,14 @@ body {
           filter: var(--tw-filter);
 }
 
-.active\:bg-red-500:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
 .active\:bg-secondary:active {
   --tw-bg-opacity: 1;
   background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
 
-.active\:saturate-150:active {
-  --tw-saturate: saturate(1.5);
-  -webkit-filter: var(--tw-filter);
-          filter: var(--tw-filter);
-}
-
-.active\:saturate-200:active {
-  --tw-saturate: saturate(2);
-  -webkit-filter: var(--tw-filter);
-          filter: var(--tw-filter);
+.active\:bg-red-500:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 768px) {

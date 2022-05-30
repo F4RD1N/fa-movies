@@ -1,7 +1,6 @@
 import SearchItem from '../Home/SectionCard'
 import { MAIN_IMAGE } from '../../config/Config'
 const SearchList = ({data, type}) => {
-  
   return(
     <section className="mt-16 grid grid-cols-3 xs:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-9">
      {
