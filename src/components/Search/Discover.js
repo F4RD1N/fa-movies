@@ -4,12 +4,14 @@ import { GENRES_ID } from '../../config/Config'
 import { yearsList } from '../../utils/functions'
 import { v4 } from 'uuid'
 import SearchList from './SearchList'
-
-
+import PageHandler from './PageHandler'
+import Status from './Status'
+import Loader from '../Loader'
 const Discover = () => {
   const [genresList, setGenresList] = useState([])
   const [years, setYears] = useState([])
-  const [queries, setQueries, data, type] = useContext(DiscoverDataContext)
+  const [queries, setQueries, state, type, currentPage, setCurrentPage, totalPages] = useContext(DiscoverDataContext)
+  const [isRequsted, setIsRequested] = useState(false)
   const [discoverData, setDiscoverData] = useState({
     type: 'movie',
     genre: '',
@@ -31,6 +33,8 @@ const Discover = () => {
   }
   const sendQueryiesHandler = () => {
     setQueries(discoverData)
+    setCurrentPage(1)
+    setIsRequested(true)
   }
   return (
     <section>
@@ -72,7 +76,14 @@ const Discover = () => {
      </select>
      <span onClick={sendQueryiesHandler} className="block w-fit p-2 rounded bg-primary ml-auto active:bg-red-500">Request</span>
     </div>
-    <SearchList data={data} type={type} />
+         {
+      isRequsted ? !state.isloading ? !state.isError && state.data.length ? <><SearchList data={state.data}/>
+     <PageHandler data={state.data} page={currentPage} setPage={setCurrentPage} totalPages={totalPages}/></>
+      : <Status text={state.errorMessage} /> 
+      : <Status text={<Loader />}/> 
+      : <Status text="Find Something. . ." />
+     }
+     
     </section>
     )
 }

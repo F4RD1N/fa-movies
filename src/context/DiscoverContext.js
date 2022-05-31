@@ -16,7 +16,7 @@ const reducer = (state, action) => {
     case 'SET_LOADING':
       return {...state, isloading: true}
     case 'SET_DATA': 
-      return {...state, isloading: false, data: action.data}
+      return {...state, isloading: false, data: action.data, isError: false, errorMessage: null}
     case 'SET_ERROR':
       return {...state, isloading: false, isError: true, errorMessage: action.error}
     default:
@@ -26,25 +26,35 @@ const reducer = (state, action) => {
 const DiscoverContext = ({children}) => {
   const [queries, setQueries] = useState({})
   const [state, dispatch] = useReducer(reducer, initialState)
-  
+  const [currentPage, setCurrentPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
   
   useEffect(() => {
   const timeout = setTimeout(() => {
-    dispatch({type: 'SET_LOADING'})
-    
     if(queries.type){
-    discoverService(queries.type, queries.genre, queries.language, queries.release)
+    dispatch({type: 'SET_LOADING'})
+    discoverService(queries.type, queries.genre, queries.language, queries.release, currentPage)
       .then(res => {
-        dispatch({type: 'SET_DATA', data: res.data.results})
+        const results = res.data.results
+      
+        if(!results.length || (results.length == 1 && results[0].backdrop_path == null)) {
+        dispatch({type: 'SET_ERROR', error: 'Nothing Found!'})
+        }else {
+        dispatch({type: 'SET_DATA', data: results})
+        setTotalPages(res.data.total_pages);
+        }
+      })
+       .catch(err => {
+        dispatch({type: 'SET_ERROR', error: err.message})
       })
     }
   }, 500);
   return () => {
     clearTimeout(timeout);
   };
-}, [queries]);
+}, [queries, currentPage]);
 return(
-  <DiscoverDataContext.Provider value={[queries, setQueries, state.data, queries.type]}>
+  <DiscoverDataContext.Provider value={[queries, setQueries, state, queries.type, currentPage, setCurrentPage, totalPages]}>
    {children}
   </DiscoverDataContext.Provider>
   )

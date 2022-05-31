@@ -65,7 +65,7 @@ const SearchContext = ({children}) => {
         dispatch({type: 'SET_ERROR', error: err.message})
       })
     }else dispatch({type: 'SET_RESET'})
-  }, 500);
+  }, 700);
   return () => {
     clearTimeout(timeout);
   };
