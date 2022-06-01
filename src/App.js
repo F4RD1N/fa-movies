@@ -10,6 +10,7 @@ import HomePage from './pages/Home'
 import MoviePage from './pages/MoviePage'
 import Searchbar from './components/Home/Searchbar'
 import Search from './pages/Search'
+import LoginPage from './pages/LoginPage'
 import AddMovie from './components/AddMovie/AddMovie'
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
               <MoviePage /> 
             </MovieInfoContext>}
       />
+      <Route path="signin/" element={<LoginPage />} />
       <Route path="add/" element={<AddMovie />} />
       
       <Route path="*" element={<Navigate to="/" />} />

@@ -7,7 +7,7 @@ content: [
     extend: {
       colors: {
         natural: "#0C0D16",
-        primary: "rgb(51,51,51)",
+        primary: "rgb(35,69,183)",
         secondary: "#262626",
         textSecondary: "#8F9097"
       },
