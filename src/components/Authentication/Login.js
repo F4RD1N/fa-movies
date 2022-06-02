@@ -1,54 +1,61 @@
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
 //Components
 import Input from './Input'
-import MethodItem from './MethodItem'
+import Alert from './Alert'
+import Loading from './Loading'
+import OtherMethods from './OtherMethods'
 
-//Icons
-import Google from '../../icons/google.svg'
-import Facebook from '../../icons/facebook.svg'
-import Github from '../../icons/github.svg'
-
-//Firebase
-import {
-  GoogleAuthProvider, 
-  GithubAuthProvider, 
-  signInWithRedirect } from "firebase/auth";
-  
-import { auth } from '../../config/Firebase'
+//AuthContext
+import { useAuthContext } from '../../context/AuthContext'
 
 const Login  = () => {
+  const {
+    signInUser,
+    error, 
+    loading, 
+    alertTimer,
+    } = useAuthContext()
   
-  const googleHandler = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+  const [inputValue, setInputValue] = useState({
+    email: null,
+    password: null
+  })
+
+  const inputHandler = event => {
+    setInputValue({
+      ...inputValue,
+      [event.target.name]: event.target.value
+    })
   }
   
-  const githubHandler = () => {
-    const provider = new GithubAuthProvider();
-    signInWithRedirect(auth, provider)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+  const onSubmit = () => {
+    console.log(loading)
+    if(!loading) {
+      const {email, password} = inputValue
+      email && password && signInUser(email, password)
+    }
   }
+  
   return(
     <section 
-      className="mt-28 px-8 flex flex-col">
+      className="mt-28 px-12 flex flex-col">
      <h2 className="text-xl text-white text-left mb-4">Login to your Account</h2>
-     <Input name="Email" type="text"/>
-     <Input name="Password" type="password"/>
+     <Input name="Email" type="email" changeHandler={inputHandler}/>
+     <Input name="Password" type="password" changeHandler={inputHandler}/>
      
-     <div className="bg-primary text-white text-center rounded py-3 mt-3">Sign in</div>
+     <button disabled={loading || alertTimer && true} className="bg-primary text-white text-center rounded py-3 mt-3" onClick={onSubmit}>Sign in</button>
      
      <span className="text-center mt-10">-Or sign in with-</span>
      <span className="flex justify-center"><hr className="border-secondary border-t-4 mt-3 w-10/12"/></span>
+    
+      <OtherMethods />
      
-     <div className="flex justify-center mt-4"><ul className="flex justify-center space-x-2 items-center w-10/12">
-        <MethodItem icon={Google} handler={googleHandler}/>
-        <MethodItem icon={Facebook}/>
-        <MethodItem icon={Github} handler={githubHandler}/>
-     </ul></div>
+     <span className="text-center mt-10">Dont have an account?<span className="text-primary underline"><Link to="/signup"> Sign up</Link></span></span>
      
-     <span className="text-center mt-10">Dont have an account?<span className="text-primary underline">  Sign up</span></span>
+    <Alert text={error} type="error" timer={alertTimer}/>
+
     </section>
     )
 }

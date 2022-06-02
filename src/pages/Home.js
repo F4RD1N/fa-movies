@@ -7,10 +7,31 @@ import LastMovies from '../components/Home/LastMovies'
 import Sections from '../components/Home/Sections'
 import News from '../components/Home/News'
 
+//Auth and success alert
+import Alert from '../components/Authentication/Alert'
+import { useAuthContext } from '../context/AuthContext'
+
 const Home = () => {
-  const {isLoading, data: listData, isError, errorMessage} = useContext(HomeListContext)
+  const {
+    isLoading, 
+    data: listData, 
+    isError, 
+    errorMessage
+  } = useContext(HomeListContext)
+  
+  const {
+    success,
+    alertTimer
+  } = useAuthContext()
   return (
-    <>
+    <section className="relative overflow-hidden">
+    
+    
+    <div className="absolute text-white top-0 right-0 left-0 mt-10 h-16 z-10 pointer-events-none">
+    <Alert text={success} type="success" timer={alertTimer}/>
+    </div>
+    
+    
     <Slider />
    <div className="py-6">
     {/*<div className="px-6">
@@ -37,7 +58,7 @@ const Home = () => {
      }
      </div>
    </div>
-   </>
+   </section>
     )
 }
 export default Home;

@@ -6,14 +6,14 @@ import setAxiosConfig from './config/AxiosConfig'
 import './index.css';
 import App from './App';
 import HomeContext from './context/HomeContext'
-import LoginContext from './context/LoginContext'
+import AuthContext from './context/AuthContext'
 ReactDOM.render(
      <BrowserRouter>
-       <LoginContext>
+       <AuthContext>
          <HomeContext>
            <App />
          </HomeContext>
-       </LoginContext>
+       </AuthContext>
      </BrowserRouter>
   ,
   document.getElementById('root')

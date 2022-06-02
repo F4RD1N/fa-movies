@@ -75,6 +75,40 @@ body {
   @apply bg-natural;
 }
 
-.rtl {
-  direction: rtl;
+.loadingAnimate {
+  @apply absolute top-0 left-0 right-0 border-b-2;
+  animation: loadingAnim .5s linear infinite alternate;
+}
+@keyframes loadingAnim{
+  from{
+    @apply border-white;
+  }
+  to{
+    @apply border-primary;
+  }
+}
+
+button:disabled {
+  filter: opacity(.7);
+}
+
+.alertAnimate {
+  @apply absolute top-5 right-0 p-4 w-9/12 bg-secondary text-white border-b-4 rounded-sm;
+  animation: alertAnim 3s linear;
+  transform: translateX(100%);
+}
+
+@keyframes alertAnim {
+  0%{
+  transform: translateX(100%);
+  }
+  8%{
+  transform: translateX(-10%);
+  }
+  75%{
+  transform: translateX(-10%);
+  }
+  77%{
+  transform: translateX(100%);
+  }
 }

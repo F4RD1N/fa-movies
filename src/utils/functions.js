@@ -61,3 +61,68 @@ export const yearsList = () => {
 export const sliceTitle = title => {
   return title.split("").length > 25 ? title.slice(0,25)+'...' : title
 }
+
+export const authErrorCodes = code => {
+  switch(code) {
+    case 'auth/invalid-email':
+      return 'The Email is Invalid!'
+      
+    case 'auth/user-not-found':
+      return 'User not Found!'
+      
+    case 'auth/wrong-password':
+      return 'The Password is Wrong!'
+      
+    case 'auth/too-many-requests':
+      return 'too many Requests!'
+      
+    case 'auth/email-already-in-use':
+      return 'The Email is Already in Use!'
+      
+    case 'auth/weak-password':
+      return 'Use a Strogner Password!'
+      
+    case 'auth/network-request-failed':
+      return 'Network Request Failed!'
+      
+    case 'auth/account-exists-with-different-credential':
+      return 'Account Exists with Different Credential!'
+      
+    case 'auth/popup-closed-by-user':
+      return 'You Closed the Authentication Page!'
+      
+    case 'auth/cancelled-popup-request':
+      return 'Popup Request Cancelled!'
+      
+    case 'success-register':
+      return 'Your Account has been Registered!'
+      
+    case 'success-login':
+      return 'You Logged in Successfully!'
+      
+    case 'success-logout':
+      return 'You Logged out Successfully!'
+      
+    case 'success-forgotPassword':
+      return 'The Password sent to Your Email!'
+      
+    default:
+      return 'unknown error'
+  }
+}
+
+export const alertTypes = type => {
+  switch(type) {
+    case 'error':
+      return 'border-red-600'
+    case 'success':
+      return 'border-green-600'
+    case 'warning':
+      return 'border-orange-400'
+    case 'loading':
+      return 'border-white'
+      
+    default:
+      return 'border-red-600'
+  }
+}
