@@ -7,11 +7,11 @@ const Sections = ({title, data, type}) => {
   
 const settings = {
       dots: false,
-      infinite: false,
+      infinite: true,
       speed: 500,
       lazyLoad: true,
-      slidesToShow: 3.1,
-      slidesToScroll: 3,
+      slidesToShow: 9,
+      slidesToScroll: 9,
       arrows: false,
       responsive: [
         {

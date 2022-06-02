@@ -19,6 +19,8 @@ const reducer = (state, action) => {
       return {...state, isloading: false, data: action.data, isError: false, errorMessage: null}
     case 'SET_ERROR':
       return {...state, isloading: false, isError: true, errorMessage: action.error}
+    case 'SET_RESET':
+      return initialState
     default:
       return state
   }
@@ -51,6 +53,7 @@ const DiscoverContext = ({children}) => {
   }, 500);
   return () => {
     clearTimeout(timeout);
+    dispatch({type:'SET_RESET'})
   };
 }, [queries, currentPage]);
 return(

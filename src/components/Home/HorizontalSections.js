@@ -10,8 +10,8 @@ const HorizontalSections = ({data, title, type}) => {
       initialSlide: 1,
       speed: 500,
       lazyLoad: true,
-      slidesToShow:1.4,
-      slidesToScroll: 1,
+      slidesToShow:4.5,
+      slidesToScroll: 3,
       arrows: false,
    responsive: [
         {

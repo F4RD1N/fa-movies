@@ -19,6 +19,8 @@ const reducer = (state, action) => {
       return {...state, isLoading: false, data: setOrderArrayById([...state.data, action.data])};
     case 'SET_ERROR':
       return { ...state, isLoading:false, isError: true, errorMessage: action.error}
+    case 'SET_RESET':
+      return initialState
     default:
       return state;
   }
@@ -52,6 +54,7 @@ const HomeContext = ({ children }) => {
           })
         })
     })
+    return () => dispatch({type: 'SET_RESET'})
   }, [])
   return(
     <HomeListContext.Provider value={ state }>

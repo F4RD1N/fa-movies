@@ -32,8 +32,6 @@ const MovieInfoContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
     dispatch({ type:'SET_LOADING' })
-    
-    //if path paramater(id) chenges, the state will be reset and will push new data
 
     movieDetails.map(item => {
       const { id, name, type } = item

@@ -20,7 +20,7 @@ const reducer = (state, action) => {
     case 'SET_ERROR':
       return {...state, isloading: false, isError: true, errorMessage: action.error}
     case 'SET_RESET':
-      return {isloading: false, data: [], isError: false, errorMessage: null}
+      return initialState
     default:
       return state
   }
@@ -68,6 +68,7 @@ const SearchContext = ({children}) => {
   }, 700);
   return () => {
     clearTimeout(timeout);
+    dispatch({type: 'SET_RESET'})
   };
 }, [location.search, currentYear, currentPage]);
 return(

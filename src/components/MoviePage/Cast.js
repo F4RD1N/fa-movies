@@ -9,8 +9,8 @@ const Cast = ({data}) => {
       infinite: false,
       speed: 500,
       lazyLoad: true,
-      slidesToShow: 1.65,
-      slidesToScroll: 1,
+      slidesToShow: 4.5,
+      slidesToScroll: 3,
       arrows: false,
       responsive: [
         {
