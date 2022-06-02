@@ -492,12 +492,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 10;
 }
 
-.z-20 {
-  z-index: 20;
-}
-
 .z-30 {
   z-index: 30;
+}
+
+.z-20 {
+  z-index: 20;
 }
 
 .mx-2 {
@@ -1327,13 +1327,13 @@ body {
 }
 
 .loadingAnimate {
-  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   border-bottom-width: 2px;
   -webkit-animation: loadingAnim .5s linear infinite alternate;
           animation: loadingAnim .5s linear infinite alternate;
+  position: fixed;
 }
 
 @-webkit-keyframes loadingAnim{

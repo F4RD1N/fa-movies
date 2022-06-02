@@ -76,8 +76,9 @@ body {
 }
 
 .loadingAnimate {
-  @apply absolute top-0 left-0 right-0 border-b-2;
+  @apply top-0 left-0 right-0 border-b-2;
   animation: loadingAnim .5s linear infinite alternate;
+  position: fixed;
 }
 @keyframes loadingAnim{
   from{

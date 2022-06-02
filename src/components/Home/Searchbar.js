@@ -8,7 +8,7 @@ import { useAuthContext } from '../../context/AuthContext'
 const Searchbar = () => {
   const navigate = useNavigate()
   const buttonRef = useRef(null)
-  const {user} = useAuthContext()
+  const {user, loading} = useAuthContext()
   const [openDetails, setOpenDetails] = useState(false)
   const clickHandler = event => {
     if(buttonRef.current.classList.contains('ri-arrow-left-line'))
@@ -25,7 +25,7 @@ const Searchbar = () => {
      <ul className="flex justify-between items-center text-2xl">
       {
         user ? <div onClick={userDetailsHandler} className="w-7 invert rounded-full overflow-hidden">{user.photoURL ? <img src={user.photoURL}/> : <div className="w-7 h-7 bg-red-500 flex justify-center items-center text-base  ">{user.displayName && user.displayName.slice(0,1)}</div>}</div>
-        : <Link to="/signin" className="w-7 invert rounded-full overflow-hidden"><img src={Account}/></Link>
+        : <div className="w-7 h-7"> { !loading && <Link to="/signin" className="w-7 invert rounded-full overflow-hidden"><img src={Account}/></Link>}</div>
       }
       <li className="appTitle">FaMovie</li>
       <NavLink 

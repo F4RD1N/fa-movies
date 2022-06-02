@@ -34,12 +34,7 @@ const MovieInfoContext = ({ children }) => {
     dispatch({ type:'SET_LOADING' })
     
     //if path paramater(id) chenges, the state will be reset and will push new data
-    if(state.data.length >= 3) {
-      dispatch({
-        type: 'SET_RESET'
-      })
-    }
-    
+
     movieDetails.map(item => {
       const { id, name, type } = item
       movieDetailsService(currentPath, params.id, type)
@@ -56,10 +51,11 @@ const MovieInfoContext = ({ children }) => {
           })
         })
     })
+    return () => dispatch({type: 'SET_RESET'})
   }, [params])
   return(
     <MovieDataContext.Provider value={ state }>
-     { state.data ? state.data.length == movieDetails.length && children : '' }
+     { state.data ? state.data.length >= movieDetails.length && children : '' }
     </MovieDataContext.Provider>
     )
 }

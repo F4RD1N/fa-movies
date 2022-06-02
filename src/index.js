@@ -7,14 +7,15 @@ import './index.css';
 import App from './App';
 import HomeContext from './context/HomeContext'
 import AuthContext from './context/AuthContext'
+
 ReactDOM.render(
      <BrowserRouter>
        <AuthContext>
          <HomeContext>
-           <App />
+             <App />
          </HomeContext>
        </AuthContext>
-     </BrowserRouter>
+      </BrowserRouter>
   ,
   document.getElementById('root')
 );

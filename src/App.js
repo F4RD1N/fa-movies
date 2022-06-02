@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick-theme.css"
 import MovieInfoContext from './context/MovieInfoContext'
 import SearchContext from './context/SearchContext'
 import DiscoverContext from './context/DiscoverContext'
-import { useAuthContext } from './context/AuthContext'
 import HomePage from './pages/Home'
 import MoviePage from './pages/MoviePage'
 import Searchbar from './components/Home/Searchbar'
@@ -20,7 +19,6 @@ import Loading from './components/Authentication/Loading'
 function App() {
   const location = useLocation()
   const [showNavbar, setShowNavbar] = useState(true)
-  const { loading } = useAuthContext()
   useLayoutEffect(() => {
     switch(location.pathname) {
       case '/signin':
@@ -33,7 +31,7 @@ function App() {
   }, [location])
   return (
     <div className="bg-natural text-textSecondary">
-        <Loading isLoading={loading}/>
+    <Loading />
      <ScrollToTop />
      {
        showNavbar && <Searchbar />

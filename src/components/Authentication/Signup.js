@@ -40,7 +40,7 @@ const Signup  = () => {
       className="mt-16 px-12 flex flex-col">
      <h2 className="text-xl text-white text-left mb-4">Create a new Account</h2>
      <Input name="Name" type="text" changeHandler={inputHandler}/>
-     <Input name="Email" type="text" changeHandler={inputHandler}/>
+     <Input name="Email" type="email" changeHandler={inputHandler}/>
      <Input name="Password" type="password" changeHandler={inputHandler}/>
      
      <button disabled={loading || alertTimer && true} className="bg-primary text-white text-center rounded py-3 mt-3" onClick={onSubmit}>Register</button>
@@ -50,7 +50,9 @@ const Signup  = () => {
      
      <OtherMethods />
      
-     <span className="text-center mt-10">have an account?<span className="text-primary underline"><Link to="/signin"> Login</Link></span></span>
+     <span className="text-center mt-10">have an account?<span className="text-primary underline">
+    { !loading && <Link to="/signin"> Login</Link> }
+     </span></span>
      
     <Alert text={error} type="error" timer={alertTimer}/>
      <Loading isLoading={loading}/>

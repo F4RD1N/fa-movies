@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import { authErrorCodes, alertTypes } from '../../utils/functions'
-const Loading = ({isLoading}) => {
-
+import { useAuthContext } from '../../context/AuthContext'
+const Loading = () => {
+   const { loading } = useAuthContext()
   return(
     <>
-     { isLoading &&
+     { loading &&
      <div className="loadingAnimate z-30">
      </div>
        

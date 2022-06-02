@@ -52,7 +52,10 @@ const Login  = () => {
     
       <OtherMethods />
      
-     <span className="text-center mt-10">Dont have an account?<span className="text-primary underline"><Link to="/signup"> Sign up</Link></span></span>
+     <span className="text-center mt-10">Dont have an account?<span className="text-primary underline">
+    { !loading && <Link to="/signup"> Sign up</Link> }
+     </span>
+     </span>
      
     <Alert text={error} type="error" timer={alertTimer}/>
 
