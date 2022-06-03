@@ -53,7 +53,6 @@ const DiscoverContext = ({children}) => {
   }, 500);
   return () => {
     clearTimeout(timeout);
-    dispatch({type:'SET_RESET'})
   };
 }, [queries, currentPage]);
 return(

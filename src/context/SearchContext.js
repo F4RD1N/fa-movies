@@ -68,7 +68,6 @@ const SearchContext = ({children}) => {
   }, 700);
   return () => {
     clearTimeout(timeout);
-    dispatch({type: 'SET_RESET'})
   };
 }, [location.search, currentYear, currentPage]);
 return(
