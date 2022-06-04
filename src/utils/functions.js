@@ -62,6 +62,26 @@ export const sliceTitle = title => {
   return title.split("").length > 25 ? title.slice(0,25)+'...' : title
 }
 
+export const getGenresNameById = id => {
+  switch(id) {
+    case 16: return 'Animation'
+    case 28: return 'Action'
+    case 35: return 'Comedy'
+    case 80: return 'Crime'
+    case 18: return 'Drama'
+    case 99: return 'Documantary'
+    case 10751: return 'Family'
+    case 14: return 'Fantasy'
+    case 36: return 'History'
+    case 27: return 'Horror'
+    case 10402: return 'Music'
+    case 10749: return 'Romance'
+    case 53: return 'Theiller'
+    case 10752: return 'War'
+    default: return 'Action'
+  }
+}
+
 export const authErrorCodes = code => {
   switch(code) {
     case 'auth/invalid-email':

@@ -17,7 +17,8 @@ const POSTER_SIZE = "w342"
 const PROFILE_SIZE = "w154"
 
 const MAIN_IMAGE = path => IMAGE_BASE_URL+POSTER_SIZE+path
-const MAIN_BACKDROP = path =>IMAGE_BASE_URL+BACKDROP_SIZE+path
+const MAIN_BACKDROP = path =>IMAGE_BASE_URL+'original'+path
+const LOW_BACKDROP = path =>IMAGE_BASE_URL+'w780'+path
 const MAIN_AVATAR = path => IMAGE_BASE_URL+PROFILE_SIZE+path
 //genres list
 const GENRES_ID = {
@@ -41,9 +42,17 @@ const GENRES_ID = {
 //home list
 const HOME_LIST_TYPE = [
   {
+    id: 14,
+    title: 'Slider',
+    path: 'movie/popular?',
+    mode: 'slider',
+    type: 'movie',
+    page: 1
+    },
+  {
     id: 1,
     title: 'Top Rated',
-    path: 'movie/popular?',
+    path: 'movie/top_rated?',
     mode: 'horizontal',
     type: 'movie',
     page: 1
@@ -54,7 +63,7 @@ const HOME_LIST_TYPE = [
     path: 'movie/popular?',
     mode: 'vertical',
     type: 'movie',
-    page: 1
+    page: 2
     },
   {
     id: 3,
@@ -204,6 +213,7 @@ export {
   TRAILER_LINK,
   MAIN_IMAGE,
   MAIN_BACKDROP,
+  LOW_BACKDROP,
   MAIN_AVATAR,
   HOME_LIST_TYPE,
   MOVIE_DETAILS,

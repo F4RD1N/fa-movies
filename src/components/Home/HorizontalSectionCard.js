@@ -17,7 +17,7 @@ const HorizontalSectionCard = ({name, cover, movieId, type}) => {
       className="absolute object-cover w-full h-full rounded" />
       { 
         isLoaded && <div className="absolute bottom-0 w-full cardGradient px-3">
-      <h2 className="text-white text-base mt-6">{name}</h2>
+      <h2 className="text-white text-base mt-8">{name}</h2>
      </div>
       }
     </div>

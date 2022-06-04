@@ -1,4 +1,4 @@
-import { MAIN_IMAGE } from '../../config/Config'
+import { LOW_BACKDROP } from '../../config/Config'
 import HorizontalSectionCard from './HorizontalSectionCard'
 import Titlebar from './Titlebar'
 import Slider from "react-slick";
@@ -79,7 +79,7 @@ const HorizontalSections = ({data, title, type}) => {
        return backdrop_path && <HorizontalSectionCard
              key={id}
              name={title ? title : name}
-             cover={backdrop_path ? MAIN_IMAGE(backdrop_path) : MAIN_IMAGE(poster_path)}
+             cover={backdrop_path ? LOW_BACKDROP(backdrop_path) : LOW_BACKDROP(poster_path)}
              movieId={id}
              type={type}
            />

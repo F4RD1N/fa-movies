@@ -28,8 +28,15 @@ const Home = () => {
     <Alert text={success} type="success" timer={alertTimer}/>
     </div>
     
-    
-    <Slider />
+    {
+       !isLoading && listData.map(item => {
+         const { id, data, mode } = item
+         if(mode == 'slider')
+           return (<Slider 
+                     key={id} 
+                     data={data}/>);
+       })
+     }
    <div className="py-6">
      <div className="px-5">
      {

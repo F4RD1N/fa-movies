@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate, Link} from 'react-router-dom'
 
 //Components
 import Input from './Input'
@@ -11,6 +11,7 @@ import OtherMethods from './OtherMethods'
 import { useAuthContext } from '../../context/AuthContext'
 
 const Login  = () => {
+  const navigate = useNavigate()
   const {
     signInUser,
     error, 
@@ -37,10 +38,18 @@ const Login  = () => {
       email && password && signInUser(email, password)
     }
   }
-  
+  const goBackHandler = () => {
+    navigate('/', {replace: true})
+  }
   return(
-    <section 
-      className="mt-28 px-12 flex flex-col">
+    <section>
+    <div className="mt-5 ml-5">
+    <i 
+       className="text-2xl text-white ri-arrow-left-line"
+       onClick={goBackHandler}></i>
+    </div>
+    <div 
+      className="mt-12 px-12 flex flex-col">
      <h2 className="text-xl text-white text-left mb-4">Login to your Account</h2>
      <Input name="Email" type="email" changeHandler={inputHandler}/>
      <Input name="Password" type="password" changeHandler={inputHandler}/>
@@ -59,6 +68,7 @@ const Login  = () => {
      
     <Alert text={error} type="error" timer={alertTimer}/>
 
+    </div>
     </section>
     )
 }

@@ -8,7 +8,7 @@ content: [
       colors: {
         natural: "#0C0D16",
         primary: "rgb(75,53,120)",
-        secondary: "#262626",
+        secondary: "rgb(50,50,50)",
         textSecondary: "#8F9097"
       },
       minHeight: {

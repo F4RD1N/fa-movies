@@ -65,7 +65,6 @@ const AuthContext = ({children}) => {
       .then(res => setSuccess('success-logout'))
       .catch(err => setError(err.code))
       .finally(() => setLoading(false))
-    console.log(success)
   }
   const forgotPassword = (email) => {
     setError(null)
