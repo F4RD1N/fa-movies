@@ -9,6 +9,7 @@ content: [
         natural: "#0C0D16",
         primary: "rgb(75,53,120)",
         secondary: "rgb(50,50,50)",
+        overlay: "rgba(0,0,0,0.285)",
         textSecondary: "#8F9097"
       },
       minHeight: {

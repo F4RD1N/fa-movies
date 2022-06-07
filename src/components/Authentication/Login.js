@@ -39,7 +39,7 @@ const Login  = () => {
     }
   }
   const goBackHandler = () => {
-    navigate('/', {replace: true})
+    navigate(-1, {replace: true})
   }
   return(
     <section>
@@ -67,7 +67,7 @@ const Login  = () => {
      </span>
      
     <Alert text={error} type="error" timer={alertTimer}/>
-
+    <Loading />
     </div>
     </section>
     )

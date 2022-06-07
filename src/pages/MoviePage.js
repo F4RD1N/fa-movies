@@ -23,7 +23,6 @@ const MoviePage = () => {
     videos: [],
     recommendations: []
   })
-  
   const { mainDetails } = movieData
   const movieTitle = mainDetails.title ? mainDetails.title : mainDetails.original_title ? mainDetails.original_title : mainDetails.name
   

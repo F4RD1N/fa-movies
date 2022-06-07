@@ -37,7 +37,7 @@ const AuthContext = ({children}) => {
     location.pathname == '/signin' && user && navigate('/', {replace: true})
     location.pathname == '/signup' && user && navigate('/', {replace: true})
     return unsubscribe
-  }, [user, location])
+  }, [user, location.pathname])
   
   const registerUser = (name, email, password) => {
     setError(null)

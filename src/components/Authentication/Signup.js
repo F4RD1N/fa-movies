@@ -13,6 +13,7 @@ import { useAuthContext } from '../../context/AuthContext'
 
 const Signup  = () => {
   const navigate = useNavigate()
+  
   const {
     registerUser, 
     error, 

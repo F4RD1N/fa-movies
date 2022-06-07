@@ -5,15 +5,14 @@ import axios from 'axios'
 import setAxiosConfig from './config/AxiosConfig'
 import './index.css';
 import App from './App';
-import HomeContext from './context/HomeContext'
 import AuthContext from './context/AuthContext'
-
+import HomeContext from './context/HomeContext'
 ReactDOM.render(
      <BrowserRouter>
        <AuthContext>
-         <HomeContext>
+        <HomeContext>
              <App />
-         </HomeContext>
+        </HomeContext>
        </AuthContext>
       </BrowserRouter>
   ,

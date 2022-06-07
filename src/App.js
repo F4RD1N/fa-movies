@@ -1,5 +1,6 @@
-import {Routes,Route, Navigate, useLocation} from 'react-router-dom'
-import { useState, useLayoutEffect } from 'react'
+import { Navigate, useLocation } from 'react-router-dom'
+import { Routes, Route, topbar } from "react-router-loading";
+import { useState, useLayoutEffect, useEffect } from 'react'
 import { ScrollToTop } from 'react-router-scroll-to-top';
 import './App.css';
 import "slick-carousel/slick/slick.css"
@@ -14,9 +15,16 @@ import Search from './pages/Search'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import AddMovie from './components/AddMovie/AddMovie'
-import Loading from './components/Authentication/Loading'
 
+//AuthContext
+import { useAuthContext } from './context/AuthContext'
+
+//loading
+import MainLoading from './components/MainLoading'
 function App() {
+  const { loading } = useAuthContext()
+    
+    
   const location = useLocation()
   const [showNavbar, setShowNavbar] = useState(true)
   useLayoutEffect(() => {
@@ -29,15 +37,17 @@ function App() {
         return setShowNavbar(true)
     }
   }, [location])
+  
+  useEffect(() => topbar.config({ barColors: {1.0: 'rgb(96,99,232)'}}), [])
+  
   return (
     <div className="bg-natural text-textSecondary">
-    <Loading />
-     <ScrollToTop />
      {
        showNavbar && <Searchbar />
      }
-     <Routes>
-      <Route path="/" element={<HomePage />} />
+     
+     <Routes isLoading={loading}>
+      <Route path="/" element={<HomePage />}/>
       <Route 
         path="/search" 
         element={
@@ -53,7 +63,7 @@ function App() {
             <MovieInfoContext>
               <MoviePage /> 
             </MovieInfoContext>}
-      />
+      loading/>
       <Route 
         path="tv/:id" 
         element={

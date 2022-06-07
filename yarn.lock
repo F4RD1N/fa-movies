@@ -7622,6 +7622,13 @@ react-router-dom@^6.2.1:
     history "^5.2.0"
     react-router "6.2.1"
 
+react-router-loading@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-router-loading/-/react-router-loading-1.0.0.tgz#412bdd36c0feea73dee32324e7da4d1d2cdcf112"
+  integrity sha512-aEpqiyDrBGbDOhFiKSuXzI78FZIMmjV1+Rok6rBFdbrrifNdg3XnzU48zBPm4r/E2YShtcsYLvIZ74DU5EVMxw==
+  dependencies:
+    topbar "^1.0.1"
+
 react-router-scroll-to-top@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-router-scroll-to-top/-/react-router-scroll-to-top-1.1.2.tgz#3dba2439930a35a8c1d40a63fda04efa14e4370d"
@@ -8705,6 +8712,11 @@ toidentifier@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
+
+topbar@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/topbar/-/topbar-1.0.1.tgz#7987fb9ea40ce702ed2d9fcded3407a8ae5a33a9"
+  integrity sha512-HZqQSMBiG29vcjOrqKCM9iGY/h69G5gQH7ae83ZCPz5uPmbQKwK0sMEqzVDBiu64tWHJ+kk9NApECrF+FAAvRA==
 
 tough-cookie@^4.0.0:
   version "4.0.0"
