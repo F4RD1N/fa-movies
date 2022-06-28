@@ -36,7 +36,6 @@ const SearchContext = ({children}) => {
   
   useEffect(() => {
       setCurrentPage(1)
-      navigate(`?query=${query}`, {replace: true})
   }, [query])
 
   
@@ -45,8 +44,7 @@ const SearchContext = ({children}) => {
     //currentPage == false && setCurrentPage(1)
   const timeout = setTimeout(() => {
     dispatch({type: 'SET_LOADING'})
-    const url = queryString(location.search)
-    const path = `language=en-US&query=${url}&include_adult=false&year=${currentYear}&page=${currentPage}`
+    const path = `language=en-US&query=${query}&include_adult=false&year=${currentYear}&page=${currentPage}`
     if(query){
     searchService(path)
       .then(res => {
@@ -69,7 +67,7 @@ const SearchContext = ({children}) => {
   return () => {
     clearTimeout(timeout);
   };
-}, [location.search, currentYear, currentPage]);
+}, [query, currentYear, currentPage]);
 return(
   <SearchDataContext.Provider value={[query, setQuery, state, currentYear, setCurrentYear,currentPage, setCurrentPage, totalPages]}>
    {children}

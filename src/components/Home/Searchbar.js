@@ -2,6 +2,7 @@ import { useState, useRef, useContext, useEffect } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Account from '../../icons/account.png'
 import UserDetails from '../Authentication/UserDetails'
+import Loader from '../Loader'
 //Login Context
 import { useAuthContext } from '../../context/AuthContext'
 
@@ -25,13 +26,13 @@ const Searchbar = () => {
      <ul className="flex justify-between items-center text-2xl">
       {
         user ? <div onClick={userDetailsHandler} className="w-7 invert rounded-full overflow-hidden">{user.photoURL ? <img src={user.photoURL}/> : <div className="w-7 h-7 bg-red-500 flex justify-center items-center text-base  ">{user.displayName && user.displayName.slice(0,1)}</div>}</div>
-        : <div className="w-7 h-7"> { !loading && <Link to="/signin" className="w-7 invert rounded-full overflow-hidden"><img src={Account}/></Link>}</div>
+        : <div className="w-7 h-7"> { !loading ? <Link to="/signin" className="w-7 invert rounded-full overflow-hidden"><img src={Account}/></Link> : <Loader />}</div>
       }
       <li className="appTitle">FaMovie</li>
       <NavLink 
          ref={buttonRef}
          onClick={clickHandler}
-         to="/search?query="
+         to="/search"
          className={({isActive}) => isActive ? 'ri-arrow-left-line' : 'ri-search-line'}>
       </NavLink>
      </ul>

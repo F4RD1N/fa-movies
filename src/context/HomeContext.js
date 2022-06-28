@@ -1,24 +1,27 @@
 import React, { useState, useReducer, useEffect } from 'react'
+//import { useLoadingContext } from "react-router-loading";
 import { homeListService } from '../services/homeListService'
 import { HOME_LIST_TYPE as homeListType} from '../config/Config'
 import { setOrderArrayById } from '../utils/functions'
+//Loading Component
+import MainLoading from '../components/MainLoading'
 
 export const HomeListContext = React.createContext(null)
 
 const initialState = {
-  isLoading: false,
+  isLoading: true,
   data: [],
   isError: false,
   errorMessage: null
 }
 const reducer = (state, action) => {
   switch(action.type){
-    case 'SET_LOADING': 
-      return {...state, isLoading: true};
+    case 'SET_DONE': 
+      return {...state, isLoading: false};
     case 'SET_DATA':
-      return {...state, isLoading: false, data: setOrderArrayById([...state.data, action.data])};
+      return {...state, data: setOrderArrayById([...state.data, action.data])};
     case 'SET_ERROR':
-      return { ...state, isLoading:false, isError: true, errorMessage: action.error}
+      return { ...state, isError: true, errorMessage: action.error}
     case 'SET_RESET':
       return initialState
     default:
@@ -26,11 +29,10 @@ const reducer = (state, action) => {
   }
 }
 const HomeContext = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  // const loadingContext = useLoadingContext();
+   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatch({ type:'SET_LOADING' })
-    
     homeListType.map(typeItem => {
       const { id, title, path, page, mode, genre, query, originalLanguage, type} = typeItem
       homeListService(path, page, genre, query, originalLanguage)
@@ -53,12 +55,16 @@ const HomeContext = ({ children }) => {
             error: err.message
           })
         })
+        .finally(() => {
+          dispatch({type: 'SET_DONE'})
+         // loadingContext.done()
+          })
     })
     return () => dispatch({type: 'SET_RESET'})
   }, [])
   return(
     <HomeListContext.Provider value={ state }>
-     { children }
+     { !state.isLoading ? children : <MainLoading />}
     </HomeListContext.Provider>
     )
 }
