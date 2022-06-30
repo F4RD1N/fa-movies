@@ -782,6 +782,16 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation: spin 1s linear infinite;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.select-none {
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .resize-none {
   resize: none;
 }
@@ -808,6 +818,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between {
   justify-content: space-between;
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1035,6 +1051,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: center;
 }
 
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1097,6 +1118,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity));
+}
+
 .text-natural {
   --tw-text-opacity: 1;
   color: rgb(12 13 22 / var(--tw-text-opacity));
@@ -1107,14 +1133,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(75 53 120 / var(--tw-text-opacity));
 }
 
-.text-yellow-500 {
-  --tw-text-opacity: 1;
-  color: rgb(234 179 8 / var(--tw-text-opacity));
-}
-
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
 }
 
 .opacity-0 {
@@ -1376,6 +1401,33 @@ button:disabled {
   }
 }
 
+/* custom scrollbar */
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 53 120 / var(--tw-bg-opacity));
+}
+
 .placeholder\:text-sm::-webkit-input-placeholder {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1442,6 +1494,23 @@ button:disabled {
 }
 
 @media (min-width: 768px) {
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .md\:h-80vh {
+    height: 90vh;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .md\:w-52 {
+    width: 13rem;
+  }
+
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }

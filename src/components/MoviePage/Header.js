@@ -18,9 +18,9 @@ const Header = ({data}) => {
  } = data
  
   return(
-  <header className="relative h-half">
+  <header className="relative h-half md:h-80vh">
   
-     <img src={backdrop_path ? MAIN_BACKDROP(backdrop_path) : MAIN_BACKDROP(poster_path)} className="w-full h-half object-cover object-top"/>
+     <img src={backdrop_path ? MAIN_BACKDROP(backdrop_path) : MAIN_BACKDROP(poster_path)} className="w-full md:h-80vh h-half object-cover object-top"/>
      
      <div className="absolute bottom-0 w-full h-1/2 sliderGradient"></div>
           

@@ -113,3 +113,26 @@ button:disabled {
   transform: translateX(100%);
   }
 }
+
+
+
+  /* custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}

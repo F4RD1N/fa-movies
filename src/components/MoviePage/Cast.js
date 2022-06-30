@@ -9,14 +9,14 @@ const Cast = ({data}) => {
       infinite: false,
       speed: 500,
       lazyLoad: true,
-      slidesToShow: 4.5,
+      slidesToShow: 6,
       slidesToScroll: 3,
       arrows: false,
       responsive: [
         {
           breakpoint: 1536,
           settings: {
-            slidesToShow: 4.5,
+            slidesToShow: 6,
             slidesToScroll: 3,
             infinite: false,
             dots: false
@@ -25,7 +25,7 @@ const Cast = ({data}) => {
         {
           breakpoint: 1280,
           settings: {
-            slidesToShow: 4.7,
+            slidesToShow: 5,
             slidesToScroll: 3,
             infinite: false,
             dots: false
@@ -34,7 +34,7 @@ const Cast = ({data}) => {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 3.2,
+            slidesToShow: 4,
             slidesToScroll: 3,
             infinite: false,
             dots: false
@@ -52,7 +52,7 @@ const Cast = ({data}) => {
         {
           breakpoint: 640,
           settings: {
-            slidesToShow: 1.6,
+            slidesToShow: 1.9,
             slidesToScroll: 1,
             infinite: false,
             dots: false

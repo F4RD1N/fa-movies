@@ -21,6 +21,7 @@ content: [
         140: "40rem",
         'header': '92vh',
         'half': '67vh',
+        '80vh': '90vh',
       },
       screens: {
       'lg': '834px',
