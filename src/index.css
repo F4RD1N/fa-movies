@@ -621,6 +621,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -1221,7 +1225,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .cardGradient {
   height: 50%;
   background: linear-gradient(to top, rgba(12,13,22, .7), rgba(12,13,22, .5), transparent 100%);
-  pointer-events: none;
 }
 
 .skeleton {
@@ -1410,6 +1413,11 @@ button:disabled {
 .hover\:bg-red-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.hover\:underline:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .hover\:saturate-150:hover {

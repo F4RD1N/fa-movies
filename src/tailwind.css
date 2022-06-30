@@ -33,7 +33,7 @@
 .cardGradient {
   height: 50%;
   background: linear-gradient(to top, rgba(12,13,22, .7), rgba(12,13,22, .5), transparent 100%);
-  pointer-events: none;
+ 
 }
 
 

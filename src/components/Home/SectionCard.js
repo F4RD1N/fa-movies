@@ -10,14 +10,15 @@ const SectionCard = ({title, poster, movieId, type}) => {
         {
           !isLoaded && <div className="absolute skeleton"></div>
         }
-   <Link to={`/${type && type == 'tv' ? 'tv' : 'movie'}/${movieId}`}>
     <LazyLoadImage
       alt={title}
       src={poster}
       afterLoad={() => setIsLoaded(true)}
-      className="absolute object-cover w-full h-full rounded" /></Link>
+      className="absolute object-cover w-full h-full rounded" />
     </div>
-    <h3 className="text-white text-xs py-2 w-11/12">{title}</h3>
+   <Link to={`/${type && type == 'tv' ? 'tv' : 'movie'}/${movieId}`}>
+    <h3 className="text-white text-xs py-2 w-11/12 hover:underline">{title}</h3>
+    </Link>
    </div>
     )
 }
