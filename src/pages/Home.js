@@ -30,8 +30,6 @@ const Home = () => {
   }, [])
   return (
     <section className="relative overflow-hidden">
-    {
-    !isLoaded ? <MainLoading /> : <>
     <div className="absolute text-white top-0 right-0 left-0 mt-10 h-16 z-10 pointer-events-none">
     <Alert text={success} type="success" timer={alertTimer}/>
     </div>
@@ -66,8 +64,6 @@ const Home = () => {
      }
      </div>
    </div>
-   </>
-    }
    </section>
     )
 }
