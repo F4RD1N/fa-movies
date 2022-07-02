@@ -17,7 +17,7 @@ const POSTER_SIZE = "w342"
 const PROFILE_SIZE = "w154"
 
 const MAIN_IMAGE = path => IMAGE_BASE_URL+POSTER_SIZE+path
-const MAIN_BACKDROP = path =>IMAGE_BASE_URL+'w1280'+path
+const MAIN_BACKDROP = path =>IMAGE_BASE_URL+'original'+path
 const LOW_BACKDROP = path =>IMAGE_BASE_URL+'w780'+path
 const MAIN_AVATAR = path => IMAGE_BASE_URL+PROFILE_SIZE+path
 //genres list

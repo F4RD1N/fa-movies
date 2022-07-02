@@ -45,12 +45,14 @@ const Signup  = () => {
   return(
     <section>
     <div className="mt-5 ml-5">
-    <i 
-       className="text-2xl text-white ri-arrow-left-line"
-       onClick={goBackHandler}></i>
+    <button
+          disabled={loading || (alertTimer && true)}
+          className="text-2xl md:text-3xl text-white ri-arrow-left-line"
+          onClick={goBackHandler}
+        ></button>
     </div>
     <div 
-      className="mt-12 px-12 flex flex-col">
+      className="mt-12 px-12 flex flex-col md:w-2/3 lg:w-1/2 2xl:w-1/3 md:mx-auto">
      <h2 className="text-xl text-white text-left mb-4">Create a new Account</h2>
      <Input name="Name" type="text" changeHandler={inputHandler}/>
      <Input name="Email" type="email" changeHandler={inputHandler}/>
@@ -63,7 +65,7 @@ const Signup  = () => {
      
      <OtherMethods />
      
-     <span className="text-center mt-10">have an account?<span className="text-primary underline">
+     <span className="text-center mt-10">have an account?<span className="text-primary underline cursor-pointer">
     { !loading && <span onClick={goBackHandler}> Login</span> }
      </span></span>
      

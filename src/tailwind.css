@@ -94,7 +94,7 @@ button:disabled {
 }
 
 .alertAnimate {
-  @apply fixed top-16 right-0 p-4 w-9/12 bg-secondary text-white border-b-4 rounded-sm;
+  @apply fixed top-8 right-0 p-4 bg-secondary text-white border-b-4 rounded-sm;
   animation: alertAnim 3s linear;
   transform: translateX(100%);
 }
@@ -115,6 +115,9 @@ button:disabled {
 }
 
 
+option {
+  @apply bg-secondary text-textSecondary;
+}
 
   /* custom scrollbar */
 /* width */

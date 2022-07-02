@@ -30,7 +30,7 @@ const Home = () => {
   }, [])
   return (
     <section className="relative overflow-hidden">
-    <div className="absolute text-white top-0 right-0 left-0 mt-10 h-16 z-10 pointer-events-none">
+    <div className="absolute text-white top-0 right-0 left-0 mt-10 h-16 z-50 pointer-events-none">
     <Alert text={success} type="success" timer={alertTimer}/>
     </div>
     
