@@ -27,7 +27,6 @@ const Login = () => {
 
   useEffect(() => {
     setInputError(validate(inputValue));
-    console.log(inputError);
   }, [inputValue]);
 
   const inputHandler = (event) => {

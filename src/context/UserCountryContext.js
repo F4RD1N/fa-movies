@@ -34,7 +34,6 @@ const UserCountryContext = ({ children }) => {
     };
     getUserCountry();
   }, [location.pathname]);
-  console.log(state);
 
 
   const contextValue = {
