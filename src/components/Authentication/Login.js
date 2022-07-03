@@ -10,26 +10,48 @@ import OtherMethods from "./OtherMethods";
 //AuthContext
 import { useAuthContext } from "../../context/AuthContext";
 
+//Validate Inputs
+import { validate } from "./validate";
 const Login = () => {
   const navigate = useNavigate();
   const { signInUser, error, loading, alertTimer } = useAuthContext();
 
   const [inputValue, setInputValue] = useState({
-    email: null,
-    password: null,
+    email: "",
+    password: "",
   });
+
+  //validate steps
+  const [inputError, setInputError] = useState({});
+  const [inputTouched, setInputTouched] = useState({});
+
+  useEffect(() => {
+    setInputError(validate(inputValue));
+    console.log(inputError);
+  }, [inputValue]);
 
   const inputHandler = (event) => {
     setInputValue({
       ...inputValue,
       [event.target.name]: event.target.value,
     });
+    setInputTouched({
+      ...inputTouched,
+      [event.target.name]: true,
+    });
   };
 
   const onSubmit = () => {
     if (!loading) {
       const { email, password } = inputValue;
-      email && password && signInUser(email, password);
+      if (email && password && !inputError.email && !inputError.password)
+        signInUser(email, password);
+      if (Object.keys(inputError).length) {
+        setInputTouched({
+          email: true,
+          password: true,
+        });
+      }
     }
   };
   const goBackHandler = () => {
@@ -48,8 +70,22 @@ const Login = () => {
         <h2 className="text-xl text-white text-left mb-4">
           Login to your Account
         </h2>
-        <Input name="Email" type="email" changeHandler={inputHandler} />
-        <Input name="Password" type="password" changeHandler={inputHandler} />
+        <Input
+          name="Email"
+          isError={inputError.email && true}
+          errorMessage={inputError.email}
+          type="email"
+          changeHandler={inputHandler}
+          isTouched={inputTouched.email}
+        />
+        <Input
+          name="Password"
+          isError={inputError.password && true}
+          errorMessage={inputError.password}
+          type="password"
+          changeHandler={inputHandler}
+          isTouched={inputTouched.password}
+        />
 
         <button
           disabled={loading || (alertTimer && true)}

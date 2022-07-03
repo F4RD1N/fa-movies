@@ -422,6 +422,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 *, ::before, ::after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
   --tw-blur: var(--tw-empty,/*!*/ /*!*/);
@@ -618,6 +626,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 4rem;
 }
 
+.-mt-1 {
+  margin-top: -0.25rem;
+}
+
+.-mt-5 {
+  margin-top: -1.25rem;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+
+.-mt-3 {
+  margin-top: -0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -762,6 +786,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-1\/2 {
   width: 50%;
+}
+
+.transform {
+  -webkit-transform: var(--tw-transform);
+          transform: var(--tw-transform);
 }
 
 @-webkit-keyframes spin {
@@ -1140,6 +1169,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(75 53 120 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .underline {

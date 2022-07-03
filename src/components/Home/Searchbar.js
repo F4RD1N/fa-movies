@@ -29,9 +29,9 @@ const Searchbar = () => {
       window.onscroll =  () => {
         let currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
-          navbarRef.current.style.top = "0";
+          navbarRef.current.style.transform = "translateY(0)";
         } else {
-          navbarRef.current.style.top = "-50px";
+          navbarRef.current.style.transform = "translateY(-50px)";
         }
         prevScrollpos = currentScrollPos;
       };
