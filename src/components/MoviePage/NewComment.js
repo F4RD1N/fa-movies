@@ -14,7 +14,7 @@ const NewComment = ({ inputRef }) => {
         className="flex w-full justify-center items-center py-3 mb-5 rounded-md bg-primary text-white font-bold"
       >
         <span className="mx-2">
-          Leave <span className="text-xs">( not available yet! )</span>
+          Post <span className="text-xs">( not available yet! )</span>
         </span>
       </button>
     </section>

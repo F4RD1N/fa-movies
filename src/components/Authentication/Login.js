@@ -105,7 +105,7 @@ const Login = () => {
         <span className="text-center mt-10">
           Dont have an account?
           <span className="text-primary underline">
-            {!loading && <Link to="/signup"> Sign up</Link>}
+            {(!loading && !alertTimer) && <Link to="/signup"> Sign up</Link>}
           </span>
         </span>
 

@@ -115,7 +115,7 @@ const Signup = () => {
         <span className="text-center mt-10">
           have an account?
           <span className="text-primary underline cursor-pointer">
-            {!loading && <span onClick={goBackHandler}> Login</span>}
+          {(!loading && !alertTimer) && <span onClick={goBackHandler}> Login</span>}
           </span>
         </span>
 
