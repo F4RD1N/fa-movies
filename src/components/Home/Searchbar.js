@@ -78,7 +78,7 @@ const Searchbar = () => {
             )}
           </div>
         )}
-        <li className="appTitle">FaMovie</li>
+        <Link to="/" className="appTitle">FaMovie</Link>
         <NavLink
           ref={buttonRef}
           onClick={clickHandler}

@@ -2,18 +2,20 @@ import { LOW_BACKDROP } from '../../config/Config'
 import HorizontalSectionCard from './HorizontalSectionCard'
 import Titlebar from './Titlebar'
 import Slider from "react-slick";
+import { useState } from 'react';
 const HorizontalSections = ({data, title, type}) => {
-  
+  const [isDragging, setIsDragging] = useState(false)
  const settings = {
       dots: false,
       infinite: false,
-      initialSlide: 1,
       speed: 500,
       lazyLoad: true,
       slidesToShow:4.5,
       slidesToScroll: 3,
       arrows: false,
-   responsive: [
+      beforeChange: () => setIsDragging(true),
+      afterChange: () => setIsDragging(false),
+      responsive: [
         {
           breakpoint: 1536,
           settings: {
@@ -82,6 +84,7 @@ const HorizontalSections = ({data, title, type}) => {
              cover={backdrop_path ? LOW_BACKDROP(backdrop_path) : LOW_BACKDROP(poster_path)}
              movieId={id}
              type={type}
+             isDragging={isDragging}
            />
      })}
     </Slider>
