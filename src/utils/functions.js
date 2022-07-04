@@ -44,13 +44,19 @@ export const getAgeLimit = (genre) => {
     case "Animation":
       return "5";
     case "Action":
-      return "13";
+      return "15";
     case "Romance":
       return "18";
     case "Horror":
       return "17";
+    case "Theiller":
+      return "17"
+    case "Drama":
+      return "16"
+    case "Family":
+      return "16"
     default:
-      return "13";
+      return "14";
   }
 };
 
