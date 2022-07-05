@@ -120,7 +120,7 @@ const Discover = () => {
         !state.isloading ? (
           !state.isError && state.data.length ? (
             <>
-              <SearchList data={state.data} />
+              <SearchList data={state.data} type={discoverData.type}/>
               <PageHandler
                 data={state.data}
                 page={currentPage}

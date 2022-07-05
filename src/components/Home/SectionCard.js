@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 const SectionCard = ({title, poster, movieId, type, isDragging}) => {
   const [isLoaded, setIsLoaded] = useState(false)
-  
+  const location = useLocation()
   return(
    <div>
-      {<Link to={!isDragging && `/${type && type == 'tv' ? 'tv' : 'movie'}/${movieId}`}>
+      {<Link target={location.pathname === '/search' ? '_blank' : ''} rel="noopener noreferrer" to={!isDragging && `/${type && type == 'tv' ? 'tv' : 'movie'}/${movieId}`}>
     <div className="relative aspect-[9/16] mr-2 overflow-hidden rounded">
         {
           !isLoaded && <div className="absolute skeleton"></div>
