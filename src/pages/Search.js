@@ -21,7 +21,6 @@ const Search = () => {
   ] = useContext(SearchDataContext);
   const inputRef = useRef(null);
   const selectRef = useRef(null);
-  const [isFilterClicked, setIsFilterClicked] = useState(false);
   const [years, setYears] = useState([]);
   const [isDiscover, setIsDiscover] = useState(false);
   useEffect(() => {
@@ -35,13 +34,17 @@ const Search = () => {
     <section className="mt-20 px-5">
       <ul className="mb-5 text-lg flex justify-center items-center space-x-3">
         <li
-          className={`${!isDiscover && "text-white border-b-4 border-primary"} cursor-pointer`}
+          className={`${
+            !isDiscover && "text-white border-b-4 border-primary"
+          } cursor-pointer`}
           onClick={() => setIsDiscover(false)}
         >
           Search
         </li>
         <li
-          className={`${isDiscover && "text-white border-b-4 border-primary"} cursor-pointer`}
+          className={`${
+            isDiscover && "text-white border-b-4 border-primary"
+          } cursor-pointer`}
           onClick={() => setIsDiscover(true)}
         >
           Discover

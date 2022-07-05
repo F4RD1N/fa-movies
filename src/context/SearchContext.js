@@ -1,7 +1,6 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { searchService } from "../services/searchService";
-import { queryString } from "../utils/functions";
 
 export const SearchDataContext = React.createContext(null);
 

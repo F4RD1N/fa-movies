@@ -1,11 +1,10 @@
-import Login from '../components/Authentication/Login'
+import Login from "../components/Authentication/Login";
 const LoginPage = () => {
-  return(
+  return (
     <section className="relative overflow-hidden">
       <Login />
     </section>
-    )
-}
+  );
+};
 
-
-export default LoginPage
+export default LoginPage;

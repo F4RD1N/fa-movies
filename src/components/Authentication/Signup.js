@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //Components
 import Input from "./Input";
@@ -28,7 +28,6 @@ const Signup = () => {
   const [inputTouched, setInputTouched] = useState({});
   useEffect(() => {
     setInputError(validate(inputValue));
-    console.log(inputError);
   }, [inputValue]);
 
   const inputHandler = (event) => {
@@ -45,7 +44,8 @@ const Signup = () => {
   const onSubmit = () => {
     if (!loading) {
       const { name, email, password } = inputValue;
-      if (name && email && password && !Object.keys(inputError).length) registerUser(name, email, password);
+      if (name && email && password && !Object.keys(inputError).length)
+        registerUser(name, email, password);
 
       setInputTouched({
         name: true,
@@ -115,7 +115,9 @@ const Signup = () => {
         <span className="text-center mt-10">
           have an account?
           <span className="text-primary underline cursor-pointer">
-          {(!loading && !alertTimer) && <span onClick={goBackHandler}> Login</span>}
+            {!loading && !alertTimer && (
+              <span onClick={goBackHandler}> Login</span>
+            )}
           </span>
         </span>
 

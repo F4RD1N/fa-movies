@@ -22,21 +22,23 @@ const Searchbar = () => {
   };
 
   //NavBar Controll
-  const navbarRef = useRef(null)
+  const navbarRef = useRef(null);
   useEffect(() => {
     const navBarControllWhileScrolling = () => {
       let prevScrollpos = window.pageYOffset;
-      window.onscroll =  () => {
+      window.onscroll = () => {
         let currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-          navbarRef.current.style.transform = "translateY(0)";
-        } else {
-          navbarRef.current.style.transform = "translateY(-50px)";
+        if (navbarRef.current && navbarRef.current.style) {
+          if (prevScrollpos > currentScrollPos) {
+            navbarRef.current.style.transform = "translateY(0)";
+          } else {
+            navbarRef.current.style.transform = "translateY(-50px)";
+          }
+          prevScrollpos = currentScrollPos;
         }
-        prevScrollpos = currentScrollPos;
       };
     };
-    navBarControllWhileScrolling()
+    navBarControllWhileScrolling();
   }, []);
   return (
     <nav
@@ -78,7 +80,9 @@ const Searchbar = () => {
             )}
           </div>
         )}
-        <Link to="/" className="appTitle">FaMovie</Link>
+        <Link to="/" className="appTitle">
+          FaMovie
+        </Link>
         <NavLink
           ref={buttonRef}
           onClick={clickHandler}

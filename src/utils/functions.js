@@ -50,11 +50,11 @@ export const getAgeLimit = (genre) => {
     case "Horror":
       return "17";
     case "Theiller":
-      return "17"
+      return "17";
     case "Drama":
-      return "16"
+      return "16";
     case "Family":
-      return "16"
+      return "16";
     default:
       return "14";
   }
@@ -194,4 +194,3 @@ export const alertTypes = (type) => {
       return "border-red-600";
   }
 };
-

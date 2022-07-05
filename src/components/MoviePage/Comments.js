@@ -4,10 +4,13 @@ import CommentsTitlebar from "./CommentsTitlebar";
 import CommentCard from "./CommentCard";
 import NewComment from "./NewComment";
 const Comments = ({ data }) => {
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
   return (
     <section className="mt-11">
-      <CommentsTitlebar count={data && data.length && data.length} inputRef={inputRef}/>
+      <CommentsTitlebar
+        count={data && data.length && data.length}
+        inputRef={inputRef}
+      />
       {data && data.length ? (
         data.map((item) => {
           const { author, content, created_at, id } = item;
@@ -24,7 +27,7 @@ const Comments = ({ data }) => {
       ) : (
         <center>there is no Comments :(</center>
       )}
-      <NewComment inputRef={inputRef}/>
+      <NewComment inputRef={inputRef} />
     </section>
   );
 };

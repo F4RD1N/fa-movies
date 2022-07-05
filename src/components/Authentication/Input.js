@@ -1,4 +1,4 @@
-const Input = ({ name, type, changeHandler, isError, errorMessage, isTouched }) => {
+const Input = ({ name, type, changeHandler, errorMessage, isTouched }) => {
   return (
     <div className="mt-1 flex flex-col">
       <label className="mb-1">{name}:</label>
@@ -12,7 +12,9 @@ const Input = ({ name, type, changeHandler, isError, errorMessage, isTouched }) 
         autoComplete="off"
         required
       />
-      <span className="text-red-500 text-sm -mt-2 mb-3">{isTouched && errorMessage}</span>
+      <span className="text-red-500 text-sm -mt-2 mb-3">
+        {isTouched && errorMessage}
+      </span>
     </div>
   );
 };

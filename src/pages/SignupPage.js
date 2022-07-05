@@ -1,10 +1,10 @@
-import Signup from '../components/Authentication/Signup'
+import Signup from "../components/Authentication/Signup";
 const SignupPage = () => {
-  return(
-    <section className="relative overflow-hidden"> 
-       <Signup /> 
+  return (
+    <section className="relative overflow-hidden">
+      <Signup />
     </section>
-    )
-}
+  );
+};
 
-export default SignupPage
+export default SignupPage;

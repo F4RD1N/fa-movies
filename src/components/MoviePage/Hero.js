@@ -1,21 +1,7 @@
-import { MAIN_BACKDROP, TRAILER_LINK } from "../../config/Config";
+import { TRAILER_LINK } from "../../config/Config";
 
 const Hero = ({ data, trailer }) => {
-  const {
-    backdrop_path,
-    poster_path,
-    title,
-    name,
-    genres,
-    overview,
-    release_date,
-    first_air_date,
-    vote_average,
-    original_language,
-    production_countries,
-    runtime,
-    tagline,
-  } = data;
+  const { overview } = data;
   return (
     <section>
       <div className="px-6 mt-6">
