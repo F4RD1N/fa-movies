@@ -34,7 +34,9 @@ const UserCountryContext = ({ children }) => {
   useEffect(() => {
     const getUserCountry = () => {
       userCountryService()
-        .then((res) => dispatch({ type: "SET_DATA", data: res.data.country }))
+        .then((res) =>
+          dispatch({ type: "SET_DATA", data: res.data.countryName })
+        )
         .catch((err) => dispatch({ type: "SET_ERROR", err: err.message }));
     };
     getUserCountry();
