@@ -48,7 +48,7 @@ const HomeContext = ({ children }) => {
         originalLanguage,
         type,
       } = typeItem;
-      homeListService(path, page, genre, query, originalLanguage)
+      !state.data.length && homeListService(path, page, genre, query, originalLanguage)
         .then((response) => {
           const preset = {
             id,
