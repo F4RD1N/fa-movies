@@ -24,6 +24,7 @@ function App() {
 
   const location = useLocation();
   const [showNavbar, setShowNavbar] = useState(true);
+  const [showFooter, setShowFooter] = useState(true)
   useLayoutEffect(() => {
     switch (location.pathname) {
       case "/signin":
@@ -34,11 +35,23 @@ function App() {
         return setShowNavbar(true);
     }
   }, [location]);
+  useLayoutEffect(() => {
+    switch (location.pathname) {
+      case "/signin":
+        return setShowFooter(false);
+      case "/signup":
+        return setShowFooter(false);
+      case '/search':
+        return setShowFooter(false)
+      default:
+        return setShowFooter(true);
+    }
+  }, [location]);
 
   useEffect(() => topbar.config({ barColors: { 1.0: "rgb(96,99,232)" } }), []);
 
   return (
-    <div className="bg-natural text-textSecondary">
+    <div className="bg-natural text-textSecondary relative">
       {showNavbar && <Searchbar />}
 
       <Routes isLoading={loading}>
@@ -76,7 +89,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <SocialMedia />
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 }

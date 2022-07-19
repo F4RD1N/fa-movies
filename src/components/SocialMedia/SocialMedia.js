@@ -13,7 +13,7 @@ const SocialMedia = () => {
   const telegram = 'https://cryptosailors.tech/pictures/telegram_logo.png'
   const github = 'https://cdn.iconscout.com/icon/free/png-256/github-163-761603.png'
   return (
-    <div className="fixed bottom-0 socialAnimate">
+    <div className="fixed bottom-0 socialAnimate z-10">
       <div
         className=" bg-blue-400 hover:bg-blue-500 active:bg-blue-600 transition-all select-none flex justify-center items-center w-14 h-14 rounded-full m-4"
         onClick={openBoxHandler}
