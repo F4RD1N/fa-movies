@@ -16,6 +16,8 @@ import SignupPage from "./pages/SignupPage";
 
 //AuthContext
 import { useAuthContext } from "./context/AuthContext";
+import Footer from "./components/Footer/Footer";
+import SocialMedia from "./components/SocialMedia/SocialMedia";
 
 function App() {
   const { loading } = useAuthContext();
@@ -73,6 +75,8 @@ function App() {
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <SocialMedia />
+      <Footer />
     </div>
   );
 }

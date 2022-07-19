@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css");
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Ubuntu:wght@300;400;500;700&display=swap");
 .svg {
- filter: invert(45%) sepia(20%) saturate(235%) hue-rotate(194deg) brightness(88%) contrast(83%);
+  filter: invert(45%) sepia(20%) saturate(235%) hue-rotate(194deg)
+    brightness(88%) contrast(83%);
 }
 .svgInfo {
- filter: invert(40%) sepia(5%) saturate(6666%) hue-rotate(155deg) brightness(93%) contrast(90%);
+  filter: invert(40%) sepia(5%) saturate(6666%) hue-rotate(155deg)
+    brightness(93%) contrast(90%);
 }
 .title {
   @apply text-lg font-medium text-white;
@@ -24,7 +26,12 @@
 }
 .sliderGradient {
   height: 50%;
-  background: linear-gradient(to top, #0C0D16, rgba(12,13,22, .3), transparent 100%);
+  background: linear-gradient(
+    to top,
+    #0c0d16,
+    rgba(12, 13, 22, 0.3),
+    transparent 100%
+  );
   pointer-events: none;
 }
 .searchbarGradient {
@@ -32,10 +39,13 @@
 }
 .cardGradient {
   height: 50%;
-  background: linear-gradient(to top, rgba(12,13,22, .7), rgba(12,13,22, .5), transparent 100%);
- 
+  background: linear-gradient(
+    to top,
+    rgba(12, 13, 22, 0.7),
+    rgba(12, 13, 22, 0.5),
+    transparent 100%
+  );
 }
-
 
 .skeleton {
   @apply bg-secondary;
@@ -50,9 +60,14 @@
   position: absolute;
   inset: 0;
   transform: translateX(-100%);
-  background-image: linear-gradient(90deg, transparent, rgb(58, 58, 58), transparent);
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    rgb(58, 58, 58),
+    transparent
+  );
   -webkit-animation: shimmer 1.5s infinite;
-          animation: shimmer 1.5s infinite;
+  animation: shimmer 1.5s infinite;
   content: "";
 }
 
@@ -62,13 +77,12 @@
   }
 }
 
-
 .appTitle {
-  font-family: 'Oleo Script Swash Caps', cursive;
+  font-family: "Oleo Script Swash Caps", cursive;
 }
 
-html{
-font-family: 'Ubuntu', sans-serif;
+html {
+  font-family: "Ubuntu", sans-serif;
 }
 
 body {
@@ -77,20 +91,20 @@ body {
 
 .loadingAnimate {
   @apply top-0 left-0 right-0 border-b-2;
-  animation: loadingAnim .5s linear infinite alternate;
+  animation: loadingAnim 0.5s linear infinite alternate;
   position: fixed;
 }
-@keyframes loadingAnim{
-  from{
+@keyframes loadingAnim {
+  from {
     @apply border-white;
   }
-  to{
+  to {
     @apply border-primary;
   }
 }
 
 button:disabled {
-  filter: opacity(.7);
+  filter: opacity(0.7);
 }
 
 .alertAnimate {
@@ -100,26 +114,39 @@ button:disabled {
 }
 
 @keyframes alertAnim {
-  0%{
-  transform: translateX(100%);
+  0% {
+    transform: translateX(100%);
   }
-  8%{
-  transform: translateX(-10%);
+  8% {
+    transform: translateX(-10%);
   }
-  75%{
-  transform: translateX(-10%);
+  75% {
+    transform: translateX(-10%);
   }
-  77%{
-  transform: translateX(100%);
+  77% {
+    transform: translateX(100%);
   }
 }
 
+.socialAnimate {
+  opacity: 0;
+  animation: socialAnim 200ms linear forwards;
+}
+
+@keyframes socialAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
 
 option {
   @apply bg-secondary text-textSecondary;
 }
 
-  /* custom scrollbar */
+/* custom scrollbar */
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
