@@ -15,10 +15,10 @@ const SocialMedia = () => {
   return (
     <div className="fixed bottom-0 socialAnimate">
       <div
-        className=" bg-blue-400 hover:bg-blue-500 active:bg-blue-600 transition-all select-none flex justify-center items-center w-16 h-16 rounded-full m-4"
+        className=" bg-blue-400 hover:bg-blue-500 active:bg-blue-600 transition-all select-none flex justify-center items-center w-14 h-14 rounded-full m-4"
         onClick={openBoxHandler}
       >
-        <img className="invert" width={45} src={img} />
+        <img className="invert" width={40} src={img} />
       </div>
       {toggle && (
         <ul className="absolute bottom-20 socialAnimate ml-5">
