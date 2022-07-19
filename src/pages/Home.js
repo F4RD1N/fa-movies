@@ -3,7 +3,7 @@ import { HomeListContext } from "../context/HomeContext";
 import Slider from "../components/Home/Slider";
 import HorizontalSections from "../components/Home/HorizontalSections";
 import Sections from "../components/Home/Sections";
-
+import Footer from '../components/Footer/Footer'
 //Auth and success alert
 import Alert from "../components/Authentication/Alert";
 import { useAuthContext } from "../context/AuthContext";
@@ -51,6 +51,7 @@ const Home = () => {
           })}
         </div>
       </div>
+      <Footer />
     </section>
   );
 };

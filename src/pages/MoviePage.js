@@ -8,12 +8,13 @@ import Hero from "../components/MoviePage/Hero";
 import MoreInfo from "../components/MoviePage/MoreInfo";
 import Sections from "../components/Home/Sections";
 import Comments from "../components/MoviePage/Comments";
+import Footer from '../components/Footer/Footer'
 
 const MoviePage = () => {
   const location = useLocation();
   const currentPath = getCurrentPath(location.pathname).replaceAll("/", "");
 
-  const { data } = useContext(MovieDataContext);
+  const { data, isLoading } = useContext(MovieDataContext);
   const [movieData, setMovieData] = useState({
     mainDetails: {},
     credits: [],
@@ -83,7 +84,11 @@ const MoviePage = () => {
           )}
           <Comments data={movieData.reviews} />
         </div>
+        
       </section>
+      {
+          !isLoading && <Footer />
+        }
     </>
   );
 };

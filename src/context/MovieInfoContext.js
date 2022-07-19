@@ -64,7 +64,6 @@ const MovieInfoContext = ({ children }) => {
     });
     return () => dispatch({ type: "SET_RESET" });
   }, [params]);
-
   return (
     <MovieDataContext.Provider value={state}>
       {!state.isLoading ? (

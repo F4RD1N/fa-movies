@@ -16,7 +16,6 @@ import SignupPage from "./pages/SignupPage";
 
 //AuthContext
 import { useAuthContext } from "./context/AuthContext";
-import Footer from "./components/Footer/Footer";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
 
   const location = useLocation();
   const [showNavbar, setShowNavbar] = useState(true);
-  const [showFooter, setShowFooter] = useState(true)
   useLayoutEffect(() => {
     switch (location.pathname) {
       case "/signin":
@@ -35,18 +33,7 @@ function App() {
         return setShowNavbar(true);
     }
   }, [location]);
-  useLayoutEffect(() => {
-    switch (location.pathname) {
-      case "/signin":
-        return setShowFooter(false);
-      case "/signup":
-        return setShowFooter(false);
-      case '/search':
-        return setShowFooter(false)
-      default:
-        return setShowFooter(true);
-    }
-  }, [location]);
+ 
 
   useEffect(() => topbar.config({ barColors: { 1.0: "rgb(96,99,232)" } }), []);
 
@@ -89,7 +76,6 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <SocialMedia />
-      {showFooter && <Footer />}
     </div>
   );
 }
