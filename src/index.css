@@ -591,8 +591,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
 }
 
-.mt-44 {
-  margin-top: 11rem;
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .ml-2 {
@@ -645,10 +645,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-auto {
   margin-left: auto;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .block {
