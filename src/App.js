@@ -33,7 +33,6 @@ function App() {
         return setShowNavbar(true);
     }
   }, [location]);
- 
 
   useEffect(() => topbar.config({ barColors: { 1.0: "rgb(96,99,232)" } }), []);
 
