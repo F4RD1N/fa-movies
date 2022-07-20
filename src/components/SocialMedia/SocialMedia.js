@@ -22,7 +22,7 @@ const SocialMedia = () => {
       </div>
       {toggle && (
         <ul className="absolute bottom-20 socialAnimate ml-5">
-          <SocialItem img={instagram} link="https://ig.me/react.nick" />
+          <SocialItem img={instagram} link="https://instagram.com/react.nick" />
           <SocialItem img={telegram} link="https://t.me/HiddenID" />
           <SocialItem img={github} link="https://github.com/F4RD1N" />
         </ul>
