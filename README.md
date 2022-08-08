@@ -41,6 +41,7 @@ Fa Movies is a website where you can find information about movies and series :D
 
 ## Approach
 firebase auth is used for authentication of the website.
+<br />
 i started developing this project at the beginning of learning React, and it has many structural flaws. but if i were to develop this project today, many things would have changed!
 
 ## Status
