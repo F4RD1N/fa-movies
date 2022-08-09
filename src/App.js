@@ -7,12 +7,12 @@ import "slick-carousel/slick/slick-theme.css";
 import MovieInfoContext from "./context/MovieInfoContext";
 import SearchContext from "./context/SearchContext";
 import DiscoverContext from "./context/DiscoverContext";
-import HomePage from "./pages/Home";
-import MoviePage from "./pages/MoviePage";
+import Home from "./pages/Home";
+import Movie from "./pages/Movie";
 import Searchbar from "./components/Home/Searchbar";
 import Search from "./pages/Search";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 //AuthContext
 import { useAuthContext } from "./context/AuthContext";
@@ -41,7 +41,7 @@ function App() {
       {showNavbar && <Searchbar />}
 
       <Routes isLoading={loading}>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="/search"
           element={
@@ -56,7 +56,7 @@ function App() {
           path="movie/:id"
           element={
             <MovieInfoContext>
-              <MoviePage />
+              <Movie />
             </MovieInfoContext>
           }
           loading
@@ -65,12 +65,12 @@ function App() {
           path="tv/:id"
           element={
             <MovieInfoContext>
-              <MoviePage />
+              <Movie />
             </MovieInfoContext>
           }
         />
-        <Route path="signin/" element={<LoginPage />} />
-        <Route path="signup/" element={<SignupPage />} />
+        <Route path="signin/" element={<Login />} />
+        <Route path="signup/" element={<Signup />} />
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

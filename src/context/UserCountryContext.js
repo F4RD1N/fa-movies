@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useReducer } from "react";
 import { useLocation } from "react-router-dom";
 import { userCountryService } from "../services/userCountryService";
-import ErrorPage from "../pages/ErrorPage";
+import Error from "../pages/Error";
 export const UserCountryContextProvider = React.createContext();
 export const useUserCountry = () => useContext(UserCountryContextProvider);
 
@@ -47,7 +47,7 @@ const UserCountryContext = ({ children }) => {
   };
   return (
     <UserCountryContextProvider.Provider value={contextValue}>
-      {!state.isLoading && (state.data === "Iran" ? <ErrorPage /> : children)}
+      {!state.isLoading && (state.data === "Iran" ? <Error /> : children)}
     </UserCountryContextProvider.Provider>
   );
 };
